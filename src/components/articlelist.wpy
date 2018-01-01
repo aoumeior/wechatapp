@@ -1,0 +1,103 @@
+<style type="less">
+  .articlelist{
+    
+    padding-bottom: 30rpx;
+  }
+  
+  .articledata{
+    top: -1rpx;
+    display: inline-block;
+    text-align: center;
+    whidth: 200rpx;
+    height: 100rpx;
+    font-size: 30rpx;
+    position: relative;
+    border: px solid red;
+    border-radius: 50rpx;
+    background-color: red;
+    border: 20rpx sold red;
+    margin-left: 30rpx;
+  }
+
+  .article{
+    display: inline-block;
+    padding-top: 10rpx;
+    padding-left: 60rpx;
+    width: 530rpx;
+    height: 100rpx;
+  }
+  .title {
+    font-style: bold;
+    font-size: 30rpx;
+    height: 50%;
+  }
+  .profile{
+    font-size: 20rpx;
+    line-height: 30rpx;
+    height: 50%;
+  }
+
+  .morearticle{
+    margin-left: 20rpx;
+    margin-right: 20rpx;
+  }
+
+  .morearticle button{
+    whidth: 300rpx;
+    height: 60rpx;
+    font-size: 30rpx;
+  }
+</style>
+<template>
+  <view class="articlelist">
+    <view class="" wx:for="{{moves}}" wx:key="unique">
+      <view class="articledata">
+        <view class="day"><text>{{item.day}}</text></view>
+        <view class="otherdata"><text>{{item.otherdata}}</text></view>
+      </view>
+      <view class="article">
+          <view class="title"><text>{{item.title}}</text></view>
+          <view class="profile"><text>{{item.profile}}</text></view>
+      </view>
+    </view>
+    <view class="morearticle" >
+      <button type="default">查看更多</button>
+    </view>
+  </view>
+</template>
+<script>
+  import wepy from 'wepy'
+  import moment from 'moment'
+  export default class articlelist extends wepy.component {
+    props = {
+    };
+    data = {
+        moves: []
+    };
+    events = {
+    };
+    methods = {
+      'g-request': (url, $event) => {
+        var self = this;
+        console.log('articlelist.component methods response')
+        wx.request({    
+          'url': url,
+          'success': function (data) {
+            for(var item of data.data.data){
+              console.log(item);
+              var time = moment(item.occur_time)
+              item.day = time.dayOfYear()
+              item.otherdata = time.weekYear() + '-' + time.month()
+              item.profile=item.content.substr(0,10) + '...'
+              console.log(item);
+            }
+            self.moves = data.data.data
+            console.log(self.moves)
+            self.$apply()
+          }
+        });
+      }
+    };
+
+  }
+</script>

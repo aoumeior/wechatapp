@@ -1,0 +1,63 @@
+<style lang="less">
+  .panel {
+    //width: 100%;
+    margin-top: 20rpx;
+    text-align: center;
+    font-size: 12px;
+    padding-top: 20rpx;
+    padding-left: 20rpx;
+    padding-right: 20rpx;
+    padding-bottom: 20rpx;
+    &.grey {
+      background: #ccc;
+    }
+    &.white {
+       background: white;
+    }
+    .title {
+      padding-bottom: 20rpx;
+      font-size: 14px;
+      font-weight: bold;
+    }
+
+    .subtitle {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding-bottom: 20rpx;
+      font-size: 10px;
+    }
+
+    .info {
+      padding: 15rpx;
+    }
+    .testcounter {
+      margin-top: 15rpx;
+      position: absolute;
+    }
+    .counterview {
+      margin-left: 120rpx;
+    }
+  }
+</style>
+<template>
+  <view class="panel" :class="{grey: num > 55, white: num < 45}">
+    <slot name="title">
+      Title
+    </slot>
+    <slot>
+    </slot>
+  </view>
+</template>
+<script>
+  import wepy from 'wepy'
+
+  export default class Panel extends wepy.component {
+    props={
+      num: {
+        type: [Number],
+        default: 99
+      }
+    }
+  }
+</script>

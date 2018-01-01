@@ -1,0 +1,37 @@
+<style lang="less"></style>
+<template>
+   <view>
+      <imageshow></imageshow>
+    </view>
+    <view>
+      <Panel :num.sync="panel1">
+        <text class="title" slot="title">华邦动态</text>
+        <text class="subtitle">持之以恒，不为私心所困，为实现互联网事业的梦想而奋斗</text>
+      </Panel>
+      <imagetypesetting></imagetypesetting>
+      <imagetypesetting></imagetypesetting>
+    </view>
+</template>
+<script>
+  import wepy from 'wepy'
+  import Panel from '@/components/panel' // alias example
+  import Imageshow from '../components/imageshow'
+  import imagetypesetting from '../components/imagetypesetting'
+  export default class cfase extends wepy.page {
+    config = {
+      navigationBarTitleText: '更多案例'
+    }
+    components = {
+      imageshow: Imageshow,
+      Panel: Panel,
+      imagetypesetting: imagetypesetting
+    }
+    data = {
+      panel1: 10
+    }
+    onLoad() {
+      var url = 'https://unitools.site/ytcc/app/view/data?viewid=xcx-list&pageIndex=0&pageSize=4'
+      this.$invoke('Articlelist', 'g-request', url)
+    }
+  }
+</script>
