@@ -1,0 +1,40 @@
+<style lang="less">
+  .actitle{
+    font-size: 30rpx;
+    font-weight: blod;
+  }
+  .acsubtitel{
+    padding: 20rpx;
+  }
+</style>
+<template>
+  <Panel :num.sync="panel1">
+    <text class="actitle" slot="title">{{article.title}}</text>
+    <view class="acsubtitel">
+      <text>{{article.otherdata}}-{{article.day}}</text>
+    </view>
+    <view><text>{{article.content}}</text></view>
+  </Panel>
+  
+</template>
+<script>
+  import wepy from 'wepy'
+  import Panel from '@/components/panel' // alias example
+
+  export default class articlepage extends wepy.page {
+    config = {
+      navigationBarTitleText: '更多案例'
+    }
+    components = {
+      Panel: Panel,
+    }
+    data = {
+      panel1: 10,
+      article: {}
+    }
+    onLoad(opition) {
+      this.article = JSON.parse(opition.item)
+      this.$apply()
+    }
+  }
+</script>

@@ -1,67 +1,64 @@
 <style type="less">
   .articlelist{
-    
-    padding-bottom: 30rpx;
+    padding: 30rpx 0;
   }
   
+  .listdata{
+    padding-bottom: 20rpx;
+  }
   .articledata{
-    top: -1rpx;
+    top: -10rpx;
     display: inline-block;
     text-align: center;
-    whidth: 200rpx;
-    height: 100rpx;
-    font-size: 30rpx;
+    width: 130rpx;
+    height: 130rpx;
     position: relative;
     border: px solid red;
-    border-radius: 50rpx;
+    border-radius: 130rpx;
     background-color: red;
-    border: 20rpx sold red;
     margin-left: 30rpx;
   }
-
+  .day{
+    color: white;
+    font-style: bold;
+    font-size: 40rpx;
+    line-height: 50rpx;
+  }
+  .otherdata{
+    font-size: 30rpx;
+    color: white;
+  }
   .article{
     display: inline-block;
-    padding-top: 10rpx;
-    padding-left: 60rpx;
-    width: 530rpx;
+    padding-left: 40rpx;
     height: 100rpx;
   }
   .title {
     font-style: bold;
-    font-size: 30rpx;
+    font-size: 35rpx;
+    line-height: 40rpx;
     height: 50%;
   }
   .profile{
-    font-size: 20rpx;
-    line-height: 30rpx;
+    font-size: 25rpx;
     height: 50%;
   }
-
   .morearticle{
-    margin-left: 20rpx;
-    margin-right: 20rpx;
-  }
-
-  .morearticle button{
-    whidth: 300rpx;
-    height: 60rpx;
-    font-size: 30rpx;
+    margin: 0 20rpx;
   }
 </style>
 <template>
   <view class="articlelist">
-    <view class="" wx:for="{{moves}}" wx:key="unique">
-      <view class="articledata">
+    <view class="listdata" wx:for="{{moves}}" wx:key="unique">
+      <view class="articledata" 
+        bindtap="skiparticlepage({'title': {{item.title}}, 'article': {{item.profile}}, 'day': {{item.otherdata}} + {{item.day}})" >
         <view class="day"><text>{{item.day}}</text></view>
         <view class="otherdata"><text>{{item.otherdata}}</text></view>
       </view>
-      <view class="article">
+      <view class="article"  bindtap="skiparticlepage({{item}})"> 
           <view class="title"><text>{{item.title}}</text></view>
           <view class="profile"><text>{{item.profile}}</text></view>
       </view>
-    </view>
-    <view class="morearticle" >
-      <button type="default">查看更多</button>
     </view>
   </view>
 </template>
@@ -84,19 +81,19 @@
           'url': url,
           'success': function (data) {
             for(var item of data.data.data){
-              console.log(item);
               var time = moment(item.occur_time)
               item.day = time.dayOfYear()
               item.otherdata = time.weekYear() + '-' + time.month()
-              item.profile=item.content.substr(0,10) + '...'
-              console.log(item);
+              item.profile = item.content.substr(0, 25) + '...'
             }
             self.moves = data.data.data
-            console.log(self.moves)
             self.$apply()
           }
         });
-      }
+      },
+      'skiparticlepage': (item) => {
+          wx.navigateTo({ url: 'articlepage?item=' + JSON.stringify(item)})
+      },
     };
 
   }

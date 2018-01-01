@@ -30,8 +30,6 @@
       panel1: 10
     }
     onLoad() {
-      var url = 'https://unitools.site/ytcc/app/view/data?viewid=xcx-list&pageIndex=0&pageSize=4'
-      this.$invoke('Articlelist', 'g-request', url)
     }
   }
 </script>

@@ -10,7 +10,7 @@
 	"compileType": "miniprogram",
 	"libVersion": "1.7.2",
 	"appid": "wxdadf18af0d817b37",
-	"projectname": "im",
+	"projectname": "wechatapp",
 	"condition": {
 		"search": {
 			"current": -1,

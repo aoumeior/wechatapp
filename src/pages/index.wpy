@@ -17,7 +17,7 @@
       <text class="title" slot="title">{{title1}}</text>
       <text class="subtitle">{{subtitle1}}</text>
       <view class="subbuttion">
-      <button size="mini" type="primary">查看更多</button> 
+      <button size="mini" type="primary" bindtap="skipconsult()">查看更多</button>
     </view>
     </pane2>
     <imagetypesetting></imagetypesetting>
@@ -37,7 +37,7 @@
   import Imageshow from '../components/imageshow'
   import imagetypesetting from '../components/imagetypesetting'
   import Articlelist from '../components/articlelist'
-  
+
   export default class Index extends wepy.page {
     config = {
       navigationBarTitleText: '华邦首页'
@@ -47,7 +47,7 @@
       imagetypesetting: imagetypesetting,
       imageshow: Imageshow,
       pane2: Panel,
-      panel: Panel,
+      panel: Panel
     }
     data = {
       title: '如何解决网络营销之道',
@@ -60,10 +60,13 @@
     computed = {
     };
     methods = {
+      skipconsult: () => {
+        wepy.switchTab({url: 'case'})
+      }
     };
     events = {
     };
-    onReady(){
+    onReady() {
     };
     onLoad() {
       var url = 'https://unitools.site/ytcc/app/view/data?viewid=xcx-list&pageIndex=0&pageSize=4'
