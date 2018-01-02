@@ -32,8 +32,8 @@
       panel1: 10
     }
     onLoad() {
-      var url = 'https://unitools.site/ytcc/app/view/data?viewid=xcx-list'
-      this.$invoke('Articlelist', 'g-request', url)
+      var Articlelisturl = 'https://unitools.site/ytcc/app/view/data?viewid=xcx-list'
+      this.$invoke('Articlelist', 'g-request', Articlelisturl)
     }
   }
 </script>

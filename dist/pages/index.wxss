@@ -3,4 +3,4 @@
 @import "./../components/imageshow.wxss";
 @import "./../components/imagetypesetting.wxss";
 @import "./../components/articlelist.wxss";
-.subbuttion{text-align:center}
+.subbuttion{text-align:center}.freeconsult{width:300rpx;height:300rpx}

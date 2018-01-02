@@ -8,17 +8,20 @@
 	.pic {
 		display: inline-block;
 		padding: 10rpx;
+
 	}
 	.subtitlei{
 		whidth: 100%;
     background: white;
     text-align: center;
-    font-size: 12px;
+    font-size: 25rpx;
+    border-radius: 0 0 10rpx 10rpx;
 	}
 	.pic image {
 		width: 350rpx;
 		height: 150rpx;
 		display: block;
+    border-radius: 10rpx 10rpx 0 0;
 	}
 
 </style>
@@ -36,6 +39,7 @@
 </template>
 <script>
   import wepy from 'wepy'
+  import moment from 'moment'
 
   export default class imagetypesetting extends wepy.component {
     props = {
@@ -46,6 +50,24 @@
       {a: 'http://img02.tooopen.com/images/20141231/sy_78327074576.jpg', b: '夕阳西下'}]
     }
     methods = {
+      'g-request': (url, $event) => {
+        var self = this
+        console.log('imagetypesetting.component methods response')
+        wepy.request({
+          'url': url,
+          'success': function (data) {
+            for (var item of data.data.data) {
+              var time = moment(item.occur_time)
+              item.day = time.dayOfYear()
+              console.log(time.month())
+              item.otherdata = time.weekYear() + '-' + time.month()
+              item.profile = item.content.substr(0, 25) + '...'
+            }
+            self.moves = data.data.data
+            self.$apply()
+          }
+        })
+      }
     }
   }
 </script>

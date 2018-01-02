@@ -1,6 +1,10 @@
 <style lang="less">
 .subbuttion{
-   text-align:center;
+  text-align:center;
+}
+.freeconsult{
+  width: 300rpx;
+  height: 300rpx;
 }
 </style>
 <template>
@@ -27,6 +31,9 @@
       <text class="subtitle">{{subtitle}}</text>
     </panel>
     <Articlelist></Articlelist>
+  </view>
+  <view class="freeconsult">
+    <text></text>
   </view>
 </template>
 
@@ -69,8 +76,9 @@
     onReady() {
     };
     onLoad() {
-      var url = 'https://unitools.site/ytcc/app/view/data?viewid=xcx-list&pageIndex=0&pageSize=4'
-      this.$invoke('Articlelist', 'g-request', url)
+      console.log(this.components)
+      var Articlelisturl = 'https://unitools.site/ytcc/app/view/data?viewid=xcx-list&pageIndex=0&pageSize=4'
+      this.$invoke('Articlelist', 'g-request', Articlelisturl)
     }
   }
 </script>

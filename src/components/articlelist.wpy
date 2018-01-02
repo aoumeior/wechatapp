@@ -76,7 +76,7 @@
     methods = {
       'g-request': (url, $event) => {
         var self = this
-        console.log('articlelist.component methods response')
+        //console.log('articlelist.component methods response')
         wepy.request({
           'url': url,
           'success': function (data) {
