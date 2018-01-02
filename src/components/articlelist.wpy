@@ -22,7 +22,7 @@
     color: white;
     font-style: bold;
     font-size: 40rpx;
-    line-height: 50rpx;
+    line-height: 70rpx;
   }
   .otherdata{
     font-size: 30rpx;
@@ -69,32 +69,32 @@
     props = {
     };
     data = {
-        moves: []
+      moves: []
     };
     events = {
     };
     methods = {
       'g-request': (url, $event) => {
-        var self = this;
+        var self = this
         console.log('articlelist.component methods response')
-        wx.request({    
+        wepy.request({
           'url': url,
           'success': function (data) {
-            for(var item of data.data.data){
+            for (var item of data.data.data) {
               var time = moment(item.occur_time)
               item.day = time.dayOfYear()
+              console.log(time.month());
               item.otherdata = time.weekYear() + '-' + time.month()
               item.profile = item.content.substr(0, 25) + '...'
             }
             self.moves = data.data.data
             self.$apply()
           }
-        });
+        })
       },
       'skiparticlepage': (item) => {
-          wx.navigateTo({ url: 'articlepage?item=' + JSON.stringify(item)})
-      },
+        wepy.navigateTo({ url: 'articlepage?item=' + JSON.stringify(item) })
+      }
     };
-
   }
 </script>
