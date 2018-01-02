@@ -7,12 +7,10 @@
     padding-bottom: 20rpx;
   }
   .articledata{
-    top: -10rpx;
     display: inline-block;
     text-align: center;
     width: 130rpx;
     height: 130rpx;
-    position: relative;
     border: px solid red;
     border-radius: 130rpx;
     background-color: red;
@@ -21,7 +19,7 @@
   .day{
     color: white;
     font-style: bold;
-    font-size: 40rpx;
+    font-size: 45rpx;
     line-height: 70rpx;
   }
   .otherdata{
@@ -51,11 +49,11 @@
   <view class="articlelist">
     <view class="listdata" wx:for="{{moves}}" wx:key="unique">
       <view class="articledata" 
-        bindtap="skiparticlepage({'title': {{item.title}}, 'article': {{item.profile}}, 'day': {{item.otherdata}} + {{item.day}})" >
+        bindtap="skiparticlepage({{item.id}})" >
         <view class="day"><text>{{item.day}}</text></view>
         <view class="otherdata"><text>{{item.otherdata}}</text></view>
       </view>
-      <view class="article"  bindtap="skiparticlepage({{item}})"> 
+      <view class="article"  bindtap="skiparticlepage({{item.id}})"> 
           <view class="title"><text>{{item.title}}</text></view>
           <view class="profile"><text>{{item.profile}}</text></view>
       </view>
@@ -76,15 +74,14 @@
     methods = {
       'g-request': (url, $event) => {
         var self = this
-        //console.log('articlelist.component methods response')
         wepy.request({
           'url': url,
           'success': function (data) {
             for (var item of data.data.data) {
               var time = moment(item.occur_time)
-              item.day = time.dayOfYear()
-              console.log(time.month())
-              item.otherdata = time.weekYear() + '-' + time.month()
+              item.day = time.format('D')
+              console.log(item.day)
+              item.otherdata = time.weekYear() + '-' + time.format('M')
               item.profile = item.content.substr(0, 25) + '...'
             }
             self.moves = data.data.data
@@ -92,8 +89,9 @@
           }
         })
       },
-      'skiparticlepage': (item) => {
-        wepy.navigateTo({ url: 'articlepage?item=' + JSON.stringify(item) })
+      'skiparticlepage': (id) => {
+        console.log(id)
+        wepy.navigateTo({ url: 'articlepage?id=' + id })
       }
     };
   }

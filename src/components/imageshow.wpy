@@ -17,7 +17,7 @@
       <view class="show">
         <block wx:for="{{movies}}" wx:key="unique">
           <swiper-item>
-            <image src="{{item}}"  mode="aspectFill"/>
+            <image src="{{item.path}}"  mode="aspectFill"/>
           </swiper-item>
         </block>
       </view>
@@ -31,24 +31,16 @@
   export default class imageshow extends wepy.component {
     props = {
     }
-    data ={'movies': [ 'http://img04.tooopen.com/images/20130712/tooopen_17270713.jpg',
-      'http://img04.tooopen.com/images/20130617/tooopen_21241404.jpg',
-      'http://img04.tooopen.com/images/20130701/tooopen_20083555.jpg',
-      'http://img02.tooopen.com/images/20141231/sy_78327074576.jpg']
+    data = {'movies': []
     }
     methods = {
       'g-request': (url) => {
+        console.log('imageshow.component methods response')
         var self = this
         wepy.request({
           url: url,
           success: function (data) {
-            for (var item of data.data.data) {
-              var time = moment(item.occur_time)
-              item.day = time.dayOfYear()
-              item.otherdata = time.weekYear() + '-' + time.month()
-              item.profile = item.content.substr(0, 40) + '...'
-            }
-            self.moves = data.data.data
+            self.movies = data.data.data
             self.$apply()
           }
         })

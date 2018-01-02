@@ -19,7 +19,7 @@
 <script>
   import wepy from 'wepy'
   import Panel from '@/components/panel' // alias example
-
+  
   export default class articlepage extends wepy.page {
     config = {
       navigationBarTitleText: '更多案例'
@@ -32,8 +32,14 @@
       article: {}
     }
     onLoad(opition) {
-      this.article = JSON.parse(opition.item)
-      this.$apply()
+      console.log(opition)
+      var self = this
+      wepy.request({url: 'https://unitools.site/ytcc/app/view/data?viewid=xcx-list&id=' + opition.id,
+        success: (data) => {
+          self.article = data.data.data[0]
+          self.$apply()
+        }
+      })
     }
   }
 </script>

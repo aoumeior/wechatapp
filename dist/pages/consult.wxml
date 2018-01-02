@@ -5,7 +5,7 @@
       <view class="show">
         <block  wx:for="{{$imageshow$movies}}" wx:key="unique">
           <swiper-item>
-            <image src="{{item}}" mode="aspectFill"/>
+            <image src="{{item.path}}" mode="aspectFill"/>
           </swiper-item>
         </block>
       </view>
@@ -25,11 +25,11 @@
       
   <view class="articlelist">
     <view class="listdata"  wx:for="{{$Articlelist$moves}}" wx:key="unique">
-      <view class="articledata" bindtap="$Articlelist$skiparticlepage" data-wpyskiparticlepage-a="{'title': {{item.title}}" data-wpyskiparticlepage-b="'article': {{item.profile}}" data-wpyskiparticlepage-c="'day': {{item.otherdata}} + {{item.day}}">
+      <view class="articledata" bindtap="$Articlelist$skiparticlepage" data-wpyskiparticlepage-a="{{item.id}}">
         <view class="day"><text>{{item.day}}</text></view>
         <view class="otherdata"><text>{{item.otherdata}}</text></view>
       </view>
-      <view class="article" bindtap="$Articlelist$skiparticlepage" data-wpyskiparticlepage-a="{{item}}"> 
+      <view class="article" bindtap="$Articlelist$skiparticlepage" data-wpyskiparticlepage-a="{{item.id}}"> 
           <view class="title"><text>{{item.title}}</text></view>
           <view class="profile"><text>{{item.profile}}</text></view>
       </view>

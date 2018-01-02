@@ -32,8 +32,10 @@
       panel1: 10
     }
     onLoad() {
-      var Articlelisturl = 'https://unitools.site/ytcc/app/view/data?viewid=xcx-list'
+      var Articlelisturl = 'https://unitools.site/ytcc/app/view/data?viewid=xcx-list&pageIndex=0&pageSize=4'
       this.$invoke('Articlelist', 'g-request', Articlelisturl)
+      this.$invoke('imageshow', 'g-request', 'https://unitools.site/ytcc/app/view/data?viewid=xcx-piclb')
+      this.$invoke('imagetypesetting', 'g-request', 'https://unitools.site/ytcc/app/view/data?viewid=xcx-list&pageIndex=0&pageSize=4')
     }
   }
 </script>
