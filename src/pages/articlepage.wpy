@@ -14,8 +14,7 @@
       <text>{{article.otherdata}}-{{article.day}}</text>
     </view>
     <view><text>{{article.content}}</text></view>
-  </Panel>
-  
+  </Panel> 
 </template>
 <script>
   import wepy from 'wepy'
@@ -26,7 +25,7 @@
       navigationBarTitleText: '更多案例'
     }
     components = {
-      Panel: Panel,
+      Panel: Panel
     }
     data = {
       panel1: 10,

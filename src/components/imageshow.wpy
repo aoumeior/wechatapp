@@ -26,6 +26,7 @@
 <script>
   import wepy from 'wepy'
   import 'wepy-async-function'
+  import moment from 'moment'
 
   export default class imageshow extends wepy.component {
     props = {
@@ -37,24 +38,20 @@
     }
     methods = {
       'g-request': (url) => {
-        var self = this;
-        console.log('articlelist.component methods response')
-        wx.request({    
+        var self = this
+        wepy.request({
           url: url,
           success: function (data) {
-            for(var item of data.data.data){
-              console.log(item);
+            for (var item of data.data.data) {
               var time = moment(item.occur_time)
               item.day = time.dayOfYear()
               item.otherdata = time.weekYear() + '-' + time.month()
               item.profile = item.content.substr(0, 40) + '...'
-              console.log(item);
             }
             self.moves = data.data.data
-            console.log(self.moves)
             self.$apply()
           }
-        });
+        })
       }
     };
   }

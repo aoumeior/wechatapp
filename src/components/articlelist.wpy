@@ -83,7 +83,7 @@
             for (var item of data.data.data) {
               var time = moment(item.occur_time)
               item.day = time.dayOfYear()
-              console.log(time.month());
+              console.log(time.month())
               item.otherdata = time.weekYear() + '-' + time.month()
               item.profile = item.content.substr(0, 25) + '...'
             }
