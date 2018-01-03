@@ -1,6 +1,7 @@
 ## 需求配置
 
-> 获取数据 www.unitools.site/ytcc/app/view/data?viewid=XXX&param=XXX
+> 获取数据 www.unitools.site/ytcc/app/view/data?viewid=XXX&param=XXX,传入viewid
+
 
 |     需求     |    view   | 参数 |
 | :----------- | :-------: | ---: |
