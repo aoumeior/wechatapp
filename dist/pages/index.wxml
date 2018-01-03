@@ -1,0 +1,72 @@
+
+    <view>
+      
+    <swiper class="swiper" indicator-dots="true" autoplay="true" interval="5000" duration="1000">
+      <view class="show">
+        <block  wx:for="{{$imageshow$movies}}" wx:key="unique">
+          <swiper-item>
+            <image src="{{item.path}}" mode="aspectFill"/>
+          </swiper-item>
+        </block>
+      </view>
+    </swiper>
+
+    </view>
+
+    
+  <view class="panel {{$panel$num > 55 ? 'grey' : ''}} {{$panel$num < 45 ? 'white' : ''}}" >
+    <text class="title">{{title}}</text>
+    
+      
+      <text class="subtitle">{{subtitle}}</text>
+    
+  </view>
+
+
+    
+  <view class="panel {{$pane2$num > 55 ? 'grey' : ''}} {{$pane2$num < 45 ? 'white' : ''}}" >
+    <text class="title">{{title1}}</text>
+    
+      
+      <text class="subtitle">{{subtitle1}}</text>
+      <view class="subbuttion">
+      <button size="mini" type="primary" bindtap="skipconsult" data-wpyskipconsult-a="">查看更多</button>
+    </view>
+    
+  </view>
+
+    
+	<view class="arraged">
+		<view class="pic"  wx:for="{{$imagetypesetting$movies}}" wx:key="unique">
+			<view bindtap="$imagetypesetting$skiparticlepage" data-wpyskiparticlepage-a="{{item.id}}">
+				<image src="{{item.path}}" mode="aspectFill"/>
+				<view class="subtitlei">
+					<text>{{item.title}}</text>
+				</view>
+			</view>
+		</view>
+	</view>
+
+
+    
+  <view class="panel {{$panel$num > 55 ? 'grey' : ''}} {{$panel$num < 45 ? 'white' : ''}}" >
+    <text class="title">{{title}}</text>
+    
+      
+      <text class="subtitle">{{subtitle}}</text>
+    
+  </view>
+
+    
+  <view class="articlelist">
+    <view class="listdata"  wx:for="{{$Articlelist$moves}}" wx:key="unique">
+      <view class="articledata" bindtap="$Articlelist$skiparticlepage" data-wpyskiparticlepage-a="{{item.id}}">
+        <view class="day"><text>{{item.day}}</text></view>
+        <view class="otherdata"><text>{{item.otherdata}}</text></view>
+      </view>
+      <view class="article" bindtap="$Articlelist$skiparticlepage" data-wpyskiparticlepage-a="{{item.id}}"> 
+          <view class="title"><text>{{item.title}}</text></view>
+          <view class="profile"><text>{{item.profile}}</text></view>
+      </view>
+    </view>
+  </view>

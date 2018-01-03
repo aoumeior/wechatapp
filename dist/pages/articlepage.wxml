@@ -1,0 +1,12 @@
+
+  
+  <view class="panel {{$Panel$num > 55 ? 'grey' : ''}} {{$Panel$num < 45 ? 'white' : ''}}" >
+    <text class="actitle">{{article.title}}</text>
+    
+    
+    <view class="acsubtitel">
+      <text>{{article.otherdata}}-{{article.day}}</text>
+    </view>
+    <view><text>{{article.content}}</text></view>
+  
+  </view>

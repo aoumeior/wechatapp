@@ -1,0 +1,1 @@
+.arraged{width:100%;flex-direction:column;background:#ccc;text-align:center}.pic{display:inline-block;padding:10rpx}.subtitlei{whidth:100%;background:white;text-align:center;font-size:25rpx;border-radius:0 0 10rpx 10rpx}.pic image{width:350rpx;height:150rpx;display:block;border-radius:10rpx 10rpx 0 0}
