@@ -3,11 +3,11 @@
 > 获取数据 www.unitools.site/ytcc/app/view/data?viewid=XXX&param=XXX,传入viewid
 
 
-|     需求     |    view   | 参数 |
-| :----------- | :-------: | ---: |
-| 获取文章列表 |  xcx-list |   id |
-| 获取轮播列表 | xcx-piclb |      |
-| 获取背景图片 |  xcx-bg1  |      |
+|     需求     |                              view                             | 参数 |
+| :----------- | :-----------------------------------------------------------: | ---: |
+| 获取文章列表 |  https://www.unitools.site/ytcc/app/view/data?viewid=xcx-list |   id |
+| 获取轮播列表 | https://www.unitools.site/ytcc/app/view/data?viewid=xcx-piclb |      |
+| 获取背景图片 |  https://www.unitools.site/ytcc/app/view/data?viewid=xcx-bg1  |      |
 
 
 ## 数据库创建
