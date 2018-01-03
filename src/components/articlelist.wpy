@@ -2,7 +2,7 @@
   .articlelist{
     padding: 30rpx 0;
   }
-  
+
   .listdata{
     padding-bottom: 20rpx;
   }
