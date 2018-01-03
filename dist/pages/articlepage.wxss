@@ -1,2 +1,0 @@
-@import "./../components/panel.wxss";
-.actitle{font-size:30rpx;font-weight:blod}.acsubtitel{padding:20rpx}

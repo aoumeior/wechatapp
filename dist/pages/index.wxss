@@ -1,6 +1,0 @@
-@import "./../components/panel.wxss";
-@import "./../components/panel.wxss";
-@import "./../components/imageshow.wxss";
-@import "./../components/imagetypesetting.wxss";
-@import "./../components/articlelist.wxss";
-.subbuttion{text-align:center}
