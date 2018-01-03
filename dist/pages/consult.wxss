@@ -1,4 +1,0 @@
-@import "./../components/articlelist.wxss";
-@import "./../components/imagetypesetting.wxss";
-@import "./../components/panel.wxss";
-@import "./../components/imageshow.wxss";
