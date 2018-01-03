@@ -2,7 +2,7 @@
   .articlelist{
     padding: 30rpx 0;
   }
-  
+
   .listdata{
     padding-bottom: 20rpx;
   }
@@ -50,12 +50,12 @@
 <template>
   <view class="articlelist">
     <view class="listdata" wx:for="{{moves}}" wx:key="unique">
-      <view class="articledata" 
+      <view class="articledata"
         bindtap="skiparticlepage({'title': {{item.title}}, 'article': {{item.profile}}, 'day': {{item.otherdata}} + {{item.day}})" >
         <view class="day"><text>{{item.day}}</text></view>
         <view class="otherdata"><text>{{item.otherdata}}</text></view>
       </view>
-      <view class="article"  bindtap="skiparticlepage({{item}})"> 
+      <view class="article"  bindtap="skiparticlepage({{item}})">
           <view class="title"><text>{{item.title}}</text></view>
           <view class="profile"><text>{{item.profile}}</text></view>
       </view>
@@ -77,13 +77,13 @@
       'g-request': (url, $event) => {
         var self = this;
         console.log('articlelist.component methods response')
-        wx.request({    
+        wx.request({
           'url': url,
           'success': function (data) {
-            for(var item of data.data.data){
+            for(var item of data.data.data){x
               var time = moment(item.occur_time)
-              item.day = time.dayOfYear()
-              item.otherdata = time.weekYear() + '-' + time.month()
+              item.day = time.format("DD");
+              item.otherdata = .format("YYYY-MM");
               item.profile = item.content.substr(0, 25) + '...'
             }
             self.moves = data.data.data

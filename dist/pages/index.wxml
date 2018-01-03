@@ -47,7 +47,7 @@
 		</view>
 	</view>
 
-    
+
     
   <view class="panel {{$panel$num > 55 ? 'grey' : ''}} {{$panel$num < 45 ? 'white' : ''}}" >
     <text class="title">{{title}}</text>

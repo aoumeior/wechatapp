@@ -21,7 +21,7 @@
     </view>
     </pane2>
     <imagetypesetting></imagetypesetting>
-    
+
     <panel :num.sync="panel1">
       <text class="title" slot="title">{{title}}</text>
       <text class="subtitle">{{subtitle}}</text>
@@ -40,7 +40,7 @@
 
   export default class Index extends wepy.page {
     config = {
-      navigationBarTitleText: '华邦首页'
+      navigationBarTitleText: '华邦首页1'
     }
     components = {
       Articlelist: Articlelist,
