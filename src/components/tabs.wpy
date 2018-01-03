@@ -1,0 +1,55 @@
+<style lang="less">
+page{background-color:#edf0f3;}
+.nav{width:100%;height:100rpx;display:flex;flex-direction:row;}
+.default{line-height:100rpx;text-align:center;flex:1;border-right:1px solid gainsboro;color:#000;font-weight:bold;font-size:28rpx;}
+.red{line-height:100rpx;text-align:center;color:#fc5558;flex:1;border-right:1px solid gainsboro;font-weight:bold;font-size:28rpx;}
+.show{display:block;text-align:center;line-height:200rpx;}
+.hidden{display:none;text-align:center;line-height:200px;}
+</style>
+
+<template>
+  <view class="body">
+    <view class="nav bc_white">
+      <view class="{{selected?'red':'default'}}" bindtap="selected">系统提醒</view>
+      <view class="{{selected1?'red':'default'}}" bindtap="selected1">优惠活动</view>
+    </view>
+    <view class="{{selected?'show':'hidden'}}">for system</view>
+    <view class="{{selected1?'show':'hidden'}}">for activity</view>
+  </view>
+</template>
+
+
+<script>
+  import wepy from 'wepy'
+
+  export default class Tabs extends wepy.component {
+    props={
+      num: {
+        type: [Number],
+        default: 99
+      }
+    }
+    components = {};
+
+    data = {
+      selected: true,
+      selected1: false
+    };
+    methods = {
+      selected: function(e) {
+        this.setData({
+          selected1: false,
+          selected: true
+        })
+      },
+      selected1: function(e) {
+        this.setData({
+          selected: false,
+          selected1: true
+        })
+      }
+    };
+    events = {};
+     // Other properties
+  }
+</script>

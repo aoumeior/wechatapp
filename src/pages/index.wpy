@@ -43,7 +43,7 @@
 
   export default class Index extends wepy.page {
     config = {
-      navigationBarTitleText: '华邦首页1'
+      navigationBarTitleText: '华邦首页'
     }
     components = {
       Articlelist: Articlelist,

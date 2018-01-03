@@ -44,7 +44,7 @@ export default class extends wepy.app {
         'iconPath': 'bar/more/default.png',
         'selectedIconPath': 'bar/more/click.png'
       }, {
-        'pagePath': 'pages/index',
+        'pagePath': 'pages/aboutus',
         'text': '关于我们',
         'iconPath': 'bar/about/default.png',
         'selectedIconPath': 'bar/about/click.png'

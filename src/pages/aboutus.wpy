@@ -1,0 +1,25 @@
+<script>
+import wepy from 'wepy'
+import tabs from '../components/tabs'
+
+export default class Page extends wepy.page {
+  config = {};
+  components = {tabs1: tabs};
+
+  data = {};
+  methods = {};
+
+  events = {};
+  onLoad() {};
+  // Other properties
+}
+</script>
+
+<template lang="wxml">
+  <view>
+  </view>
+  <tabs1></tabs1>
+</template>
+
+<style lang="less">
+</style>
