@@ -8,27 +8,30 @@
 	.pic {
 		display: inline-block;
 		padding: 10rpx;
+
 	}
 	.subtitlei{
 		whidth: 100%;
     background: white;
     text-align: center;
-    font-size: 12px;
+    font-size: 25rpx;
+    border-radius: 0 0 10rpx 10rpx;
 	}
 	.pic image {
 		width: 350rpx;
 		height: 150rpx;
 		display: block;
+    border-radius: 10rpx 10rpx 0 0;
 	}
 
 </style>
 <template>
 	<view class="arraged">
 		<view class="pic" wx:for="{{movies}}" wx:key="unique">
-			<view>
-				<image src="{{item.a}}"  mode="aspectFill"/>
+			<view @tap="skiparticlepage({{item.id}})">
+				<image src="{{item.path}}"  mode="aspectFill"/>
 				<view class="subtitlei">
-					<text>{{item.b}}</text>
+					<text>{{item.title}}</text>
 				</view>
 			</view>
 		</view>
@@ -36,16 +39,29 @@
 </template>
 <script>
   import wepy from 'wepy'
+  import moment from 'moment'
 
   export default class imagetypesetting extends wepy.component {
     props = {
     }
-    data = {'movies': [ {a: 'http://img04.tooopen.com/images/20130712/tooopen_17270713.jpg', b: '桂林山水'},
-      {a: 'http://img04.tooopen.com/images/20130617/tooopen_21241404.jpg', b: '黄山美景'},
-      {a: 'http://img04.tooopen.com/images/20130701/tooopen_20083555.jpg', b: '西湖岸边'},
-      {a: 'http://img02.tooopen.com/images/20141231/sy_78327074576.jpg', b: '夕阳西下'}]
+    data = {'movies': []
     }
     methods = {
+      'g-request': (url, $event) => {
+        var self = this
+        console.log('imagetypesetting.component methods response')
+        wepy.request({
+          'url': url,
+          'success': function (data) {
+            self.movies = data.data.data
+            self.$apply()
+            console.log(self.movies)
+          }
+        })
+      },
+      'skiparticlepage': (item) => {
+        wepy.navigateTo({ url: 'articlepage?id=' + item })
+      }
     }
   }
 </script>

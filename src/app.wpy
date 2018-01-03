@@ -30,16 +30,24 @@ export default class extends wepy.app {
     tabBar: {
       'list': [{
         'pagePath': 'pages/index',
-        'text': '华邦首页'
+        'text': '华邦首页',
+        'iconPath': 'bar/index/default.png',
+        'selectedIconPath': 'bar/index/click.png'
       }, {
         'pagePath': 'pages/consult',
-        'text': '华邦咨询'
+        'text': '华邦咨询',
+        'iconPath': 'bar/consult/default.png',
+        'selectedIconPath': 'bar/consult/click.png'
       }, {
         'pagePath': 'pages/case',
-        'text': '更多案例'
+        'text': '更多案例',
+        'iconPath': 'bar/more/default.png',
+        'selectedIconPath': 'bar/more/click.png'
       }, {
         'pagePath': 'pages/index',
-        'text': '关于我们'
+        'text': '关于我们',
+        'iconPath': 'bar/about/default.png',
+        'selectedIconPath': 'bar/about/click.png'
       }]
     }
   }
