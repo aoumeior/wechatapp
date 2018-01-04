@@ -23,18 +23,20 @@ page{background-color:#edf0f3;}
   import wepy from 'wepy'
 
   export default class Tabs extends wepy.component {
-    props={
+    props = {
       num: {
         type: [Number],
         default: 99
       }
-    }
+    };
+
     components = {};
 
     data = {
       selected: true,
       selected1: false
     };
+
     methods = {
       selected: function(e) {
         this.setData({
@@ -49,6 +51,7 @@ page{background-color:#edf0f3;}
         })
       }
     };
+
     events = {};
      // Other properties
   }
