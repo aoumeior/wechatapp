@@ -42,6 +42,7 @@ page{background-color:#edf0f3;}
 
     methods = {
       selected: function(e) {
+        console.log('selected')
         var tabs = ['selected', 'selected1', 'selected2']
         for (var i = 0; i < tabs.length; i++) {
           if (tabs[i] === e.target.id) this.data[tabs[i]] = true

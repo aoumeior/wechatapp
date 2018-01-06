@@ -40,6 +40,7 @@
   import Imageshow from '../components/imageshow'
   import imagetypesetting from '../components/imagetypesetting'
   import Articlelist from '../components/articlelist'
+  import route from '../config/route';
 
   export default class Index extends wepy.page {
     config = {
@@ -71,11 +72,12 @@
     };
     onReady() {
     };
+
     onLoad() {
-      var Articlelisturl = 'https://unitools.site/ytcc/app/view/data?viewid=xcx-list&pageIndex=0&pageSize=4'
-      this.$invoke('Articlelist', 'g-request', Articlelisturl)
-      this.$invoke('imageshow', 'g-request', 'https://unitools.site/ytcc/app/view/data?viewid=xcx-piclb')
-      this.$invoke('imagetypesetting', 'g-request', 'https://unitools.site/ytcc/app/view/data?viewid=xcx-list&pageIndex=0&pageSize=4')
+      let rout = new route()
+      this.$invoke('Articlelist', 'g-request', rout.getUrl('Articlelist'))
+      this.$invoke('imageshow', 'g-request', rout.getUrl('imageshow'))
+      this.$invoke('imagetypesetting', 'g-request', rout.getUrl('imagetypesetting'))
     }
   }
 </script>
