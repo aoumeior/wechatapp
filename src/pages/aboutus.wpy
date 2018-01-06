@@ -2,23 +2,55 @@
   .nav{width:100%;height:100rpx;display:flex;flex-direction:row;}
   .default{line-height:100rpx;text-align:center;flex:1;border-right:1px solid gainsboro;color:#000;font-weight:bold;font-size:28rpx;}
   .red{line-height:100rpx;text-align:center;color:#fc5558;flex:1;border-right:1px solid gainsboro;font-weight:bold;font-size:28rpx;}
-  .show{display:block;text-align:center;}
-  .hidden{display:none;text-align:center;}
+  .show{display:block;}
+  .hidden{display:none;}
   /* 用于布局 */
-  .info{display: flex; flex-direction: row; border-bottom: 1px solid green; margin: 0 30rpx;}
-  .fr{display: flex; flex-direction: row;}
-  .fc{display: flex; flex-direction: column;}
-  .icon-image{width: 216rpx; height: 240rpx}
-  .com-title{line-height: 30px;}
-  .com-subtitle{font-size: 12px; }
+  .con{
+    margin-top: 20rpx;
+    text-align: left;
+  }
+  .con-img{
+    width: 300rpx;
+    height: 300rpx;
+    display: inline-block;
+  }
+  .con-img image{
+    margin: 30rpx;
+    width: 270rpx;
+    height: 270rpx;
+  }
+  .con-literal{
+    top: -50rpx;
+    display: inline-block;
+    position: relative;
+    width: 430rpx;
+    margin: 0 10rpx;
+  }
+  .com{
+    display: block;
+    font-weight: bold;
+    line-height: 60rpx;
+  }
+  .profile-title{
+    display: inline-block;
+  }
+  .introduced{
+    font-size: 30rpx;
+  }
+  .consult{
+    font-size: 30rpx;
+  }
+  .consult button {
+     position: relative;
+     top: 20rpx;
+     margin-right: 20rpx;
+  }
 </style>
 
 <template lang="wxml">
-  <view>
-  </view>
   <view class="body">
     <view class="nav bc_white">
-      <view id="tab1" class="{{tab1?'red':'default'}}" bindtap="tabSwitch">关于艺拓</view>
+      <view id="tab1" class="{{tab1?'red':'default'}}" bindtap="tabSwitch">关于华邦</view>
       <view id="tab2" class="{{tab2?'red':'default'}}" bindtap="tabSwitch">联系我们</view>
       <view id="<tab3></tab3>" class="{{tab3?'red':'default'}}" bindtap="tabSwitch">分公司</view>
     </view>
@@ -32,22 +64,25 @@
         </panel1>
     </view>
     <view class="{{tab2?'show':'hidden'}}">
-      <view class="info">
-        <view><image class="icon-image" src="http://www.unitools.site/ytcc/static/pic/icon1.png"></image></view>
-        <view class="fc m-5">
-            <view class="m-t-10"><text class="com-title">江西华邦传媒</text></view>
-            <view><text class="com-subtitle">百度推广，网站建设，企业营销服务</text></view>
-            <view class="fr">
-                <view><button size="mini">咨询</button></view>
-                <view><text>小时免费咨询</text></view>
-            </view>
+      <view class="con">
+        <view class="con-img">
+          <image mode="aspectFit" src="http://www.unitools.site/ytcc/static/pic/icon1.png"></image>
+        </view>
+        <view class="con-literal">
+          <view class="profile-title">
+            <text class="com">江西华邦传媒</text>
+            <text class="introduced">百度推广，网站建设，企业营销服务</text>
+          </view>
+          <view class="consult">
+            <button size="mini">咨询</button>
+            <text>24小时免费咨询</text>
+          </view>
         </view>
       </view>
     </view>
     <view class="{{tab3?'show':'hidden'}}">for activity1</view>
   </view>
 </template>
-
 <script>
 import wepy from 'wepy'
 import Panel from '../components/panel' // alias example
