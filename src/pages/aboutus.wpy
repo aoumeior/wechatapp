@@ -22,11 +22,11 @@
     <view class="nav bc_white">
       <view id="tab1" class="{{tab1?'red':'default'}}" bindtap="tabSwitch">关于华邦</view>
       <view id="tab2" class="{{tab2?'red':'default'}}" bindtap="tabSwitch">联系我们</view>
-      <view id="<tab3></tab3>" class="{{tab3?'red':'default'}}" bindtap="tabSwitch">分公司</view>
+      <view id="tab3" class="{{tab3?'red':'default'}}" bindtap="tabSwitch">分公司</view>
     </view>
     <view class="{{tab1?'show':'hidden'}}">
-        <view>
-          <image src="http://www.unitools.site/ytcc/static/pic/bg_gyyt.jpg"></image>
+        <view class="m-t-2">
+          <image class="width-full" mode="scaleToFill" src="http://www.unitools.site/ytcc/static/pic/bg_gyyt.jpg"></image>
         </view>
         <panel1 :num.sync="panel1">
           <text class="title" slot="title">{{title}}</text>
@@ -48,6 +48,7 @@
             <text>24小时免费咨询</text>
           </view>
         </view>
+
       </view>
     </view>
     <view class="{{tab3?'show':'hidden'}}">for activity1</view>
