@@ -5,6 +5,11 @@
   .red{line-height:100rpx;text-align:center;color:#fc5558;flex:1;border-right:1px solid gainsboro;font-weight:bold;font-size:28rpx;}
   .show{display:block;text-align:center;line-height:200rpx;}
   .hidden{display:none;text-align:center;line-height:200px;}
+  /* 用于布局 */
+  .info{width: 90%; display: flex; flex-direction: row; border-bottom: 1px solid green; margin: 0 auto: ;}
+  .fr{display: flex; flex-direction: row;}
+  .fc{display: flex; flex-direction: column;}
+  .icon-image{width: 200rpx}
 </style>
 
 <template lang="wxml">
@@ -14,21 +19,32 @@
     <view class="nav bc_white">
       <view id="tab1" class="{{tab1?'red':'default'}}" bindtap="tabSwitch">关于艺拓</view>
       <view id="tab2" class="{{tab2?'red':'default'}}" bindtap="tabSwitch">联系我们</view>
-      <view id="tab3" class="{{tab3?'red':'default'}}" bindtap="tabSwitch">分公司</view>
+      <view id="<tab3></tab3>" class="{{tab3?'red':'default'}}" bindtap="tabSwitch">分公司</view>
     </view>
     <view class="{{tab1?'show':'hidden'}}">
         <view>
           <image src="http://www.unitools.site/ytcc/static/pic/bg_gyyt.jpg"></image>
         </view>
-
+        <panel1 :num.sync="panel1">
+          <text class="title" slot="title">{{title}}</text>
+          <text class="subtitle">{{subtitle}}</text>
+        </panel1>
     </view>
-    <view class="{{tab2?'show':'hidden'}}">for activity</view>
+    <view class="{{tab2?'show':'hidden'}}">
+      <view class="info">
+        <view><image class="icon-image" src="http://www.unitools.site/ytcc/static/pic/icon1.png"></image></view>
+        <view class="fc">
+            <view><text>江西华邦传媒</text></view>
+            <view><text>百度推广，网站建设，企业营销服务</text></view>
+            <view class="fr">
+                <view><button>咨询</button></view>
+                <view><text>小时免费咨询</text></view>
+            </view>
+        </view>
+      </view>
+    </view>
     <view class="{{tab3?'show':'hidden'}}">for activity1</view>
   </view>
-  <panel1 :num.sync="panel1">
-    <text class="title" slot="title">{{title}}</text>
-    <text class="subtitle">{{subtitle}}</text>
-  </panel1>
 </template>
 
 <script>
