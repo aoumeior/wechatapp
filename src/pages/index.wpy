@@ -40,7 +40,7 @@
   import Imageshow from '../components/imageshow'
   import imagetypesetting from '../components/imagetypesetting'
   import Articlelist from '../components/articlelist'
-  import route from '../config/route';
+  import Route from '../config/route'
 
   export default class Index extends wepy.page {
     config = {
@@ -74,7 +74,7 @@
     };
 
     onLoad() {
-      let rout = new route()
+      let rout = new Route()
       this.$invoke('Articlelist', 'g-request', rout.getUrl('Articlelist'))
       this.$invoke('imageshow', 'g-request', rout.getUrl('imageshow'))
       this.$invoke('imagetypesetting', 'g-request', rout.getUrl('imagetypesetting'))

@@ -16,15 +16,15 @@
   import wepy from 'wepy'
   import Panel from '@/components/panel' // alias example
   import Imageshow from '../components/imageshow'
-  import imagetypesetting from '../components/imagetypesetting'
-  export default class cfase extends wepy.page {
+  import Imagetypesetting from '../components/imagetypesetting'
+  export default class Case extends wepy.page {
     config = {
       navigationBarTitleText: '更多案例'
     }
     components = {
       imageshow: Imageshow,
       Panel: Panel,
-      imagetypesetting: imagetypesetting
+      imagetypesetting: Imagetypesetting
     }
     data = {
       panel1: 10

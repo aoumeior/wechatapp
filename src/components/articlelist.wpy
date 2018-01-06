@@ -48,12 +48,12 @@
 <template>
   <view class="articlelist">
     <view class="listdata" wx:for="{{moves}}" wx:key="unique">
-      <view class="articledata" 
+      <view class="articledata"
         bindtap="skiparticlepage({{item.id}})" >
         <view class="day"><text>{{item.day}}</text></view>
         <view class="otherdata"><text>{{item.otherdata}}</text></view>
       </view>
-      <view class="article"  bindtap="skiparticlepage({{item.id}})"> 
+      <view class="article"  bindtap="skiparticlepage({{item.id}})">
           <view class="title"><text>{{item.title}}</text></view>
           <view class="profile"><text>{{item.profile}}</text></view>
       </view>
@@ -63,7 +63,7 @@
 <script>
   import wepy from 'wepy'
   import moment from 'moment'
-  export default class articlelist extends wepy.component {
+  export default class Articlelist extends wepy.component {
     props = {
     };
     data = {

@@ -20,7 +20,7 @@
   import wepy from 'wepy'
   import Panel from '@/components/panel' // alias example
 
-  export default class articlepage extends wepy.page {
+  export default class Articlepage extends wepy.page {
     config = {
       navigationBarTitleText: '更多案例'
     }

@@ -16,16 +16,16 @@
   import Panel from '@/components/panel' // alias example
   import Imageshow from '../components/imageshow'
   import Articlelist from '../components/articlelist'
-  import imagetypesetting from '../components/imagetypesetting'
+  import Imagetypesetting from '../components/imagetypesetting'
 
-  export default class consult extends wepy.page {
+  export default class Consult extends wepy.page {
     config = {
       navigationBarTitleText: '华邦咨询'
     }
     components = {
       imageshow: Imageshow,
       Panel: Panel,
-      imagetypesetting: imagetypesetting,
+      imagetypesetting: Imagetypesetting,
       Articlelist: Articlelist
     }
     data = {

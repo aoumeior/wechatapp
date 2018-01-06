@@ -1,9 +1,9 @@
-export default class config{
+export default class Config{
   constructor(){
     this.url = 'https://unitools.site/ytcc/app/view/data?'
     this.config =
     {
-      "Articlelist": { 
+      "Articlelist": {
         "viewid": "xcx-list",
         "pageIndex": 0,
         "pageSize": 4
@@ -19,13 +19,5 @@ export default class config{
     }
   }
 }
-  // getUrl (pram) {
-  //   let resurl = this.url
-  //   for (var val in pram) {
-  //     resurl += val + '=' + String(pram[val]) + '&';
-  //   }
-  //   resurl = resurl.substring(0, resurl.length-1);
-  //   return resurl;
-  // }
 
 

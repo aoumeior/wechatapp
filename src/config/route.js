@@ -1,5 +1,5 @@
 import config from '../config/config'
-export default class route{
+export default class Route{
 
   constructor(){
     this.gcfig = new config()

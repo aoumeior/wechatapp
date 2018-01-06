@@ -9,7 +9,7 @@
  width: 100%;
 }
 .show{
-  
+
 }
 </style>
 <template>
@@ -27,7 +27,7 @@
   import wepy from 'wepy'
   import 'wepy-async-function'
 
-  export default class imageshow extends wepy.component {
+  export default class Imageshow extends wepy.component {
     props = {
     }
     data = {'movies': []

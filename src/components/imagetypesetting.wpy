@@ -40,7 +40,7 @@
 <script>
   import wepy from 'wepy'
 
-  export default class imagetypesetting extends wepy.component {
+  export default class Imagetypesetting extends wepy.component {
     props = {
     }
     data = {'movies': []

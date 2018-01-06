@@ -20,23 +20,32 @@
         <view>
           <image src="http://www.unitools.site/ytcc/static/pic/bg_gyyt.jpg"></image>
         </view>
+
     </view>
     <view class="{{tab2?'show':'hidden'}}">for activity</view>
     <view class="{{tab3?'show':'hidden'}}">for activity1</view>
   </view>
+  <panel1 :num.sync="panel1">
+    <text class="title" slot="title">{{title}}</text>
+    <text class="subtitle">{{subtitle}}</text>
+  </panel1>
 </template>
 
 <script>
 import wepy from 'wepy'
+import Panel from '../components/panel' // alias example
 
-export default class aboutus extends wepy.page {
+export default class Aboutus extends wepy.page {
   config = {};
-  components = {};
+  components = { panel1: Panel };
 
   data = {
+    panel1: 10,
     tab1: true,
     tab2: false,
-    tab3: false
+    tab3: false,
+    title: '如何解决网络营销之道',
+    subtitle: '小程序开发框架的目标是通过尽可能简单、高效的方式让开发者可以在微信中开发具有原生app体验的服务。'
   };
   methods = {
     tabSwitch: function(e) {
