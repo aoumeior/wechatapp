@@ -41,6 +41,7 @@ page{background-color:#edf0f3;}
     };
 
     methods = {
+
       tabSwitch: function(e) {
         var tabs = ['tab1', 'tab2', 'tab3']
         for (var i = 0; i < tabs.length; i++) {
