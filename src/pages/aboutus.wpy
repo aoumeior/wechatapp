@@ -1,25 +1,57 @@
 <style lang="less">
+  page{background-color:#edf0f3;}
+  .nav{width:100%;height:100rpx;display:flex;flex-direction:row;}
+  .default{line-height:100rpx;text-align:center;flex:1;border-right:1px solid gainsboro;color:#000;font-weight:bold;font-size:28rpx;}
+  .red{line-height:100rpx;text-align:center;color:#fc5558;flex:1;border-right:1px solid gainsboro;font-weight:bold;font-size:28rpx;}
+  .show{display:block;text-align:center;line-height:200rpx;}
+  .hidden{display:none;text-align:center;line-height:200px;}
 </style>
 
 <template lang="wxml">
   <view>
   </view>
-  <tabs1></tabs1>
-
+  <view class="body">
+    <view class="nav bc_white">
+      <view id="tab1" class="{{tab1?'red':'default'}}" bindtap="tabSwitch">关于艺拓</view>
+      <view id="tab2" class="{{tab2?'red':'default'}}" bindtap="tabSwitch">联系我们</view>
+      <view id="tab3" class="{{tab3?'red':'default'}}" bindtap="tabSwitch">分公司</view>
+    </view>
+    <view class="{{tab1?'show':'hidden'}}">
+        <view>
+          <image src="http://www.unitools.site/ytcc/static/pic/bg_gyyt.jpg"></image>
+        </view>
+    </view>
+    <view class="{{tab2?'show':'hidden'}}">for activity</view>
+    <view class="{{tab3?'show':'hidden'}}">for activity1</view>
+  </view>
 </template>
 
 <script>
 import wepy from 'wepy'
-import tabs from '../components/tabs'
 
 export default class aboutus extends wepy.page {
   config = {};
-  components = {tabs1: tabs};
+  components = {};
 
-  data = {};
-  methods = {};
+  data = {
+    tab1: true,
+    tab2: false,
+    tab3: false
+  };
+  methods = {
+    tabSwitch: function(e) {
+      var tabs = ['tab1', 'tab2', 'tab3']
+      for (var i = 0; i < tabs.length; i++) {
+        if (tabs[i] === e.target.id) this[tabs[i]] = true
+        else this[tabs[i]] = false
+      }
+      this.$apply()
+    }
+  };
 
-  events = {};
+  events = {
+
+  };
   onLoad() {};
   // Other properties
 }

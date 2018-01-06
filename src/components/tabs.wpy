@@ -10,13 +10,13 @@ page{background-color:#edf0f3;}
 <template>
   <view class="body">
     <view class="nav bc_white">
-      <view id="selected" class="{{selected?'red':'default'}}" bindtap="selected">系统提醒</view>
-      <view id="selected1" class="{{selected1?'red':'default'}}" bindtap="selected">优惠活动</view>
-      <view id="selected2" class="{{selected2?'red':'default'}}" bindtap="selected">优惠活动1</view>
+      <view id="tab1" class="{{tab1?'red':'default'}}" bindtap="tabSwitch">关于艺拓</view>
+      <view id="tab2" class="{{tab2?'red':'default'}}" bindtap="tabSwitch">联系我们</view>
+      <view id="tab3" class="{{tab3?'red':'default'}}" bindtap="tabSwitch">分公司</view>
     </view>
-    <view class="{{selected?'show':'hidden'}}">for system</view>
-    <view class="{{selected1?'show':'hidden'}}">for activity</view>
-    <view class="{{selected2?'show':'hidden'}}">for activity1</view>
+    <view class="{{tab1?'show':'hidden'}}">for system</view>
+    <view class="{{tab2?'show':'hidden'}}">for activity</view>
+    <view class="{{tab3?'show':'hidden'}}">for activity1</view>
   </view>
 </template>
 
@@ -35,17 +35,17 @@ page{background-color:#edf0f3;}
     components = {};
 
     data = {
-      selected: true,
-      selected1: false,
-      selected2: false
+      tab1: true,
+      tab2: false,
+      tab3: false
     };
 
     methods = {
-      selected: function(e) {
-        var tabs = ['selected', 'selected1', 'selected2']
+      tabSwitch: function(e) {
+        var tabs = ['tab1', 'tab2', 'tab3']
         for (var i = 0; i < tabs.length; i++) {
-          if (tabs[i] === e.target.id) this.data[tabs[i]] = true
-          else this.data[tabs[i]] = false
+          if (tabs[i] === e.target.id) this[tabs[i]] = true
+          else this[tabs[i]] = false
         }
         this.$apply()
       }

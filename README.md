@@ -39,3 +39,10 @@ clearcache: `http://localhost:8081/ytcc/app/clearcache`
 ## sql编写
 
 sql编写路径: `/usr/local/apache-tomcat-8.5.24/webapps/ytcc/WEB-INF/classes/config/sql/ytcc-view-sqlList.xml`
+
+
+## 数据库插入请求
+
+```sql
+insert into t_pic values(replace(uuid(), '-', ''), 'http://www.unitools.site/ytcc/static/pic/bg_gyyt.jpg', SYSDATE(), 'bg')
+```
