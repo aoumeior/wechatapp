@@ -10,11 +10,13 @@ page{background-color:#edf0f3;}
 <template>
   <view class="body">
     <view class="nav bc_white">
-      <view class="{{selected?'red':'default'}}" bindtap="selected">系统提醒</view>
-      <view class="{{selected1?'red':'default'}}" bindtap="selected1">优惠活动</view>
+      <view id="selected" class="{{selected?'red':'default'}}" bindtap="selected">系统提醒</view>
+      <view id="selected1" class="{{selected1?'red':'default'}}" bindtap="selected">优惠活动</view>
+      <view id="selected2" class="{{selected2?'red':'default'}}" bindtap="selected">优惠活动1</view>
     </view>
     <view class="{{selected?'show':'hidden'}}">for system</view>
     <view class="{{selected1?'show':'hidden'}}">for activity</view>
+    <view class="{{selected2?'show':'hidden'}}">for activity1</view>
   </view>
 </template>
 
@@ -34,21 +36,18 @@ page{background-color:#edf0f3;}
 
     data = {
       selected: true,
-      selected1: false
+      selected1: false,
+      selected2: false
     };
 
     methods = {
       selected: function(e) {
-        this.setData({
-          selected1: false,
-          selected: true
-        })
-      },
-      selected1: function(e) {
-        this.setData({
-          selected: false,
-          selected1: true
-        })
+        var tabs = ['selected', 'selected1', 'selected2']
+        for (var i = 0; i < tabs.length; i++) {
+          if (tabs[i] === e.target.id) this.data[tabs[i]] = true
+          else this.data[tabs[i]] = false
+        }
+        this.$apply()
       }
     };
 
