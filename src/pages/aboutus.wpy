@@ -15,16 +15,22 @@
   .consult{font-size:30rpx}
   .consult button{position:relative;top:20rpx;margin-right:20rpx}
 
+  /* tabs */
+
+  .menu_tab button{margin-left: 10rpx;}
+  .menu_tab button:hover{background:#4a5064}
+  .menu_tab button.active{background:#09c}
+
 </style>
 
 <template lang="wxml">
   <view class="body">
     <view class="nav bc_white">
-      <view id="tab1" class="{{tab1?'red':'default'}}" bindtap="tabSwitch">关于华邦</view>
-      <view id="tab2" class="{{tab2?'red':'default'}}" bindtap="tabSwitch">联系我们</view>
-      <view id="tab3" class="{{tab3?'red':'default'}}" bindtap="tabSwitch">分公司</view>
+      <view id="tab1" class="{{tab.menu1?'red':'default'}}" bindtap="tabSwitch">关于华邦</view>
+      <view id="tab2" class="{{tab.menu2?'red':'default'}}" bindtap="tabSwitch">联系我们</view>
+      <view id="tab3" class="{{tab.menu3?'red':'default'}}" bindtap="tabSwitch">分公司</view>
     </view>
-    <view class="{{tab1?'show':'hidden'}}">
+    <view class="{{tab.menu1?'show':'hidden'}}">
         <view class="m-t-2">
           <image class="width-full" mode="scaleToFill" src="http://www.unitools.site/ytcc/static/pic/bg_gyyt.jpg"></image>
         </view>
@@ -33,7 +39,7 @@
           <text class="subtitle">{{subtitle}}</text>
         </panel1>
     </view>
-    <view class="{{tab2?'show':'hidden'}}">
+    <view class="{{tab.menu2?'show':'hidden'}}">
       <view class="con">
         <view class="con-img">
           <image mode="aspectFit" src="http://www.unitools.site/ytcc/static/pic/icon1.png"></image>
@@ -51,12 +57,20 @@
 
       </view>
     </view>
-    <view class="{{tab3?'show':'hidden'}}">
+    <view class="{{tab.menu3?'show':'hidden'}}">
       <view class="m-t-2">
         <image class="width-full" mode="scaleToFill" src="http://www.unitools.site/ytcc/static/pic/fgs.png"></image>
       </view>
-      <view>
-
+      <view class="menu_tab">
+        <button id="menu1" bindtap="tabSwitch2" class="{{tab1.menu1?'active':''}}" size="mini">九江</button>
+        <button id="menu2" bindtap="tabSwitch2" class="{{tab1.menu2?'active':''}}" size="mini">景德镇</button>
+        <button id="menu3" bindtap="tabSwitch2" class="{{tab1.menu3?'active':''}}" size="mini">赣州</button>
+        <button id="menu4" bindtap="tabSwitch2" class="{{tab1.menu4?'active':''}}" size="mini">上饶</button>
+        <button id="menu5" bindtap="tabSwitch2" class="{{tab1.menu5?'active':''}}" size="mini">宜春</button>
+        <button id="menu6" bindtap="tabSwitch2" class="{{tab1.menu6?'active':''}}" size="mini">萍乡</button>
+        <button id="menu7" bindtap="tabSwitch2" class="{{tab1.menu7?'active':''}}" size="mini">吉安</button>
+        <button id="menu8" bindtap="tabSwitch2" class="{{tab1.menu8?'active':''}}" size="mini">抚州</button>
+        <button id="menu9" bindtap="tabSwitch2" class="{{tab1.menu9?'active':''}}" size="mini">新余</button>
       </view>
     </view>
   </view>
@@ -72,18 +86,39 @@ export default class Aboutus extends wepy.page {
 
   data = {
     panel1: 10,
-    tab1: true,
-    tab2: false,
-    tab3: false,
+    tab: {
+      menu1: false,
+      menu2: false,
+      menu3: true
+    },
+    tab1: {
+      menu1: true,
+      menu2: false,
+      menu3: false,
+      menu4: false,
+      menu5: false,
+      menu6: false,
+      menu7: false,
+      menu8: false,
+      menu9: false
+    },
     title: '如何解决网络营销之道',
     subtitle: '小程序开发框架的目标是通过尽可能简单、高效的方式让开发者可以在微信中开发具有原生app体验的服务。'
   };
   methods = {
     tabSwitch: function(e) {
-      var tabs = ['tab1', 'tab2', 'tab3']
+      var tabs = ['menu1', 'menu2', 'menu3']
       for (var i = 0; i < tabs.length; i++) {
-        if (tabs[i] === e.target.id) this[tabs[i]] = true
-        else this[tabs[i]] = false
+        if (tabs[i] === e.target.id) this['tab'][tabs[i]] = true
+        else this['tab'][tabs[i]] = false
+      }
+      this.$apply()
+    },
+    tabSwitch2: function(e) {
+      var tabs = ['menu1', 'menu2', 'menu3', 'menu4', 'menu5', 'menu6', 'menu7', 'menu8', 'menu9']
+      for (var i = 0; i < tabs.length; i++) {
+        if (tabs[i] === e.target.id) this['tab1'][tabs[i]] = true
+        else this['tab1'][tabs[i]] = false
       }
       this.$apply()
     }
