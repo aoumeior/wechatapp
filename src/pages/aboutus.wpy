@@ -51,7 +51,14 @@
 
       </view>
     </view>
-    <view class="{{tab3?'show':'hidden'}}">for activity1</view>
+    <view class="{{tab3?'show':'hidden'}}">
+      <view class="m-t-2">
+        <image class="width-full" mode="scaleToFill" src="http://www.unitools.site/ytcc/static/pic/fgs.png"></image>
+      </view>
+      <view>
+
+      </view>
+    </view>
   </view>
 </template>
 <script>
