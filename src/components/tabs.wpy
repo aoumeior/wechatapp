@@ -1,58 +1,90 @@
 <style lang="less">
-page{background-color:#edf0f3;}
-.nav{width:100%;height:100rpx;display:flex;flex-direction:row;}
-.default{line-height:100rpx;text-align:center;flex:1;border-right:1px solid gainsboro;color:#000;font-weight:bold;font-size:28rpx;}
-.red{line-height:100rpx;text-align:center;color:#fc5558;flex:1;border-right:1px solid gainsboro;font-weight:bold;font-size:28rpx;}
-.show{display:block;text-align:center;line-height:200rpx;}
-.hidden{display:none;text-align:center;line-height:200px;}
-</style>
+.inline{
+  display: inline-block;
+}
+.tab-top{
+  width: 100%;
+  height: 70rpx;
+  display: flex;
+  flex-wrap:warp;
+  overflow: hidden;
+  text-align: center;
+}
+.tabw{
+  width: 33.33%;
+  margin: 0 30rpx;
+}
 
-<template>
-  <view class="body">
-    <view class="nav bc_white">
-      <view id="tab1" class="{{tab1?'red':'default'}}" bindtap="tabSwitch">关于艺拓</view>
-      <view id="tab2" class="{{tab2?'red':'default'}}" bindtap="tabSwitch">联系我们</view>
-      <view id="tab3" class="{{tab3?'red':'default'}}" bindtap="tabSwitch">分公司</view>
+.active{
+  border-bottom: 5rpx solid grey;
+}
+
+.item{
+  display:none;
+}
+
+.item-active{
+  display: block;
+}
+</style>
+<template lang="wxml">
+  <view class="tab">
+    <view class="tab-top m-b-10" bindtap="tabFun">
+      <view class="{{tabArr.curHdIndex=='0'? 'active' : ''}} inline tabw" id="tab-hd01" data-id="0">关于华邦</view>
+      <view class="{{tabArr.curHdIndex=='1'? 'active' : ''}} inline tabw" id="tab-hd02" data-id="1">联系我们</view>
+      <view class="{{tabArr.curHdIndex=='2'? 'active' : ''}} inline tabw" id="tab-hd03" data-id="2">分公司</view>
+    </view>  
+    <view class="tab-right">  
+      <view class="item {{tabArr.curBdIndex=='0'? 'item-active' : ''}}">
+        <slot name="tab0">
+          Title
+        </slot>
+      </view>  
+      <view class="item {{tabArr.curBdIndex=='1'? 'item-active' : ''}}">
+        <slot name="tab1">
+          Title
+        </slot>
+      </view>  
+      <view class="item {{tabArr.curBdIndex=='2'? 'item-active' : ''}}">
+        <slot name="tab2">
+          Title
+        </slot>
+      </view>  
     </view>
-    <view class="{{tab1?'show':'hidden'}}">for system</view>
-    <view class="{{tab2?'show':'hidden'}}">for activity</view>
-    <view class="{{tab3?'show':'hidden'}}">for activity1</view>
   </view>
 </template>
-
-
 <script>
-  import wepy from 'wepy'
+import wepy from 'wepy'
+import Common from '@/components/common' // alias example
 
-  export default class Tabs extends wepy.component {
-    props = {
-      num: {
-        type: [Number],
-        default: 99
-      }
-    };
+export default class Tabs extends wepy.component {
+  config = {};
+  
+  components = { common: Common };
 
-    components = {};
+  data = {
+    tabArr: {  
+      curHdIndex: 0,  
+      curBdIndex: 0  
+    }
+  };
+ 
+  methods = {
+    tabFun: function(e){
+      console.log(e);  
+      let _datasetId=e.target.dataset.id;  
+      console.log("----"+_datasetId+"----");  
+      let _obj={};  
+      _obj.curHdIndex = _datasetId;  
+      _obj.curBdIndex = _datasetId;  
+      this.tabArr=_obj
+      this.$apply()
+      console.log(this.tabArr)
+    }
+  };
 
-    data = {
-      tab1: true,
-      tab2: false,
-      tab3: false
-    };
+  events = {};
 
-    methods = {
-
-      tabSwitch: function(e) {
-        var tabs = ['tab1', 'tab2', 'tab3']
-        for (var i = 0; i < tabs.length; i++) {
-          if (tabs[i] === e.target.id) this[tabs[i]] = true
-          else this[tabs[i]] = false
-        }
-        this.$apply()
-      }
-    };
-
-    events = {};
-     // Other properties
-  }
+  onLoad() {};
+}
 </script>
