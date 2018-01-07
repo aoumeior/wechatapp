@@ -34,7 +34,7 @@
         </view>
       </view>
       <info></info>
-    </view>  
+    </view>
   </tabs>
 </template>
 <script>
