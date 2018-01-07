@@ -1,0 +1,47 @@
+<style type="less"></style>
+<template>
+  <view class="clearfix">
+    <view class="h1 m-10">
+      <text>{{cominfo.company_name}}</text>
+    </view>
+      <view class="content m-10 underline">
+      <view class="clearfix ">
+        <text class="pull-left h2">tel:</text><text class="pull-right content content-color">{{cominfo.tel}}</text>
+      </view>
+      <view class="clearfix underline">
+        <text class="pull-left h2">email:</text><text class="pull-right content content-color">{{cominfo.email}}</text>
+      </view>
+      <view class="clearfix underline">
+        <text class="pull-left h2">fax:</text><text class="pull-right content content-color">{{cominfo.fax}}</text>
+      </view>
+      <view class="clearfix underline">
+        <text class="pull-left h2">addr:</text><text class="pull-right content content-color">{{cominfo.addr}}</text>
+      </view>
+    </view>
+  </view>
+</template>
+<script>
+import wepy from 'wepy'
+import Common from '@/components/common' // alias example
+
+export default class Information extends wepy.component {
+  data= {
+    cominfo: {}
+  };
+  components = { common: Common };
+  methods= {
+    'g-request': (url, $event) => {
+      var self = this
+      wepy.request({
+        'url': url,
+        'success': function(data) {
+          console.log('1')
+          self.cominfo = data.data.data[0]
+          self.$apply()
+          console.log(self.cominfo)
+        }})
+    }
+  };
+};
+
+</script>

@@ -48,7 +48,6 @@
     methods = {
       'g-request': (url, $event) => {
         var self = this
-        console.log('imagetypesetting.component methods response')
         wepy.request({
           'url': url,
           'success': function (data) {

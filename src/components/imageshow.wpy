@@ -31,7 +31,6 @@
     }
     methods = {
       'g-request': (url) => {
-        console.log('imageshow.component methods response')
         var self = this
         wepy.request({
           url: url,

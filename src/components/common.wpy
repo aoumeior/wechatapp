@@ -228,6 +228,14 @@ body {
 .underline {border-bottom: 1px solid #e2e7eb!important }
 /* 清除浮动 */
 .clearfix{clear:both;}
+
+/*title*/
+.h1{font-size:48rpx;font-weight:bold;line-height:48rpx;margin:20rpx 0;}
+.h2{font-size:36rpx;font-weight:bold;line-height:36rpx;margin:15rpx 0;}
+/*内容*/
+.content{font-size:28rpx;line-height:35rpx!important}
+/*灰色文字*/
+.content-color{font-color:grey}
 </style>
 <template>
 

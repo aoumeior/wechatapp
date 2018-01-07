@@ -3,7 +3,6 @@ export default class Route{
 
   constructor(){
     this.gcfig = new config()
-    console.log(this.gcfig);
   }
 
   getUrl (name) {
