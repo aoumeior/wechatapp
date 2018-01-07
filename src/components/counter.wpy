@@ -35,20 +35,14 @@
         default: 50
       }
     }
-
     data = {
     }
     events = {
-      'index-broadcast': (...args) => {
-        let $event = args[args.length - 1]
-      }
     }
-
     watch = {
       num (curVal, oldVal) {
       }
     }
-
     methods = {
       plus () {
         this.num = this.num + 1

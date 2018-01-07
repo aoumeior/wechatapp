@@ -218,6 +218,12 @@ body {
 .width-250{width:500rpx!important}
 .width-300{width:600rpx!important}
 .width-350{width:700rpx!important}
+/* 标题文本-默认大小继承 */
+.u-tt{font-family: 'microsoft yahei', sans-serif;}
+.u-tt-sm{font-size: 24rpx;}
+.u-tt-md{font-size: 28rpx;}
+.u-tt-lg{font-size: 32rpx;}
+.u-tt-xl{font-size: 36rpx;}
 .text-ellipsis {white-space: nowrap!important; text-overflow: ellipsis!important }
 .underline {border-bottom: 1px solid #e2e7eb!important }
 /* 清除浮动 */

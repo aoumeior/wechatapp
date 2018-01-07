@@ -14,15 +14,12 @@
   width: 33.33%;
   margin: 0 30rpx;
 }
-
 .active{
   border-bottom: 5rpx solid grey;
 }
-
 .item{
   display:none;
 }
-
 .item-active{
   display: block;
 }
@@ -59,32 +56,27 @@ import Common from '@/components/common' // alias example
 
 export default class Tabs extends wepy.component {
   config = {};
-  
+
   components = { common: Common };
 
   data = {
-    tabArr: {  
-      curHdIndex: 0,  
-      curBdIndex: 0  
+    tabArr: {
+      curHdIndex: 0,
+      curBdIndex: 0
     }
   };
- 
   methods = {
-    tabFun: function(e){
-      console.log(e);  
-      let _datasetId=e.target.dataset.id;  
-      console.log("----"+_datasetId+"----");  
-      let _obj={};  
-      _obj.curHdIndex = _datasetId;  
-      _obj.curBdIndex = _datasetId;  
-      this.tabArr=_obj
+    tabFun: function (e) {
+      let _datasetId = e.target.dataset.id
+      let _obj = {}
+      _obj.curHdIndex = _datasetId
+      _obj.curBdIndex = _datasetId
+      this.tabArr = _obj
       this.$apply()
       console.log(this.tabArr)
     }
   };
-
   events = {};
-
   onLoad() {};
 }
 </script>

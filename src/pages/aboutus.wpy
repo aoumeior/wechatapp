@@ -45,21 +45,20 @@ import Information from '../components/information'
 
 export default class Aboutus extends wepy.page {
   config = {};
-  
-  components = { 
-    tabs:Tabs,
+  components = {
+    tabs: Tabs,
     common: Common,
     info: Information
   };
 
   data = {};
- 
+
   methods = {};
 
   events = {};
 
   onLoad() {
-     this.$invoke('info', 'g-request', 'https://unitools.site/ytcc/app/view/data?viewid=xcx-company')
+    this.$invoke('info', 'g-request', 'https://unitools.site/ytcc/app/view/data?viewid=xcx-company')
   };
 }
 </script>
