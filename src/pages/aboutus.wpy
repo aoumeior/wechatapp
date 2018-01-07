@@ -26,9 +26,9 @@
 <template lang="wxml">
   <view class="body">
     <view class="nav bc_white">
-      <view id="tab1" class="{{tab.menu1?'red':'default'}}" bindtap="tabSwitch">关于华邦</view>
-      <view id="tab2" class="{{tab.menu2?'red':'default'}}" bindtap="tabSwitch">联系我们</view>
-      <view id="tab3" class="{{tab.menu3?'red':'default'}}" bindtap="tabSwitch">分公司</view>
+      <view id="menu1" class="{{tab.menu1?'red':'default'}}" bindtap="tabSwitch">关于华邦</view>
+      <view id="menu2" class="{{tab.menu2?'red':'default'}}" bindtap="tabSwitch">联系我们</view>
+      <view id="menu3" class="{{tab.menu3?'red':'default'}}" bindtap="tabSwitch">分公司</view>
     </view>
     <view class="{{tab.menu1?'show':'hidden'}}">
         <view class="m-t-2">
