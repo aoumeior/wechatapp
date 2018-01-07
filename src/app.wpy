@@ -20,7 +20,7 @@ export default class extends wepy.app {
       'pages/consult',
       'pages/case',
       'pages/articlepage',
-      'pages/aboutus',
+      'pages/aboutus'
     ],
     window: {
       backgroundTextStyle: 'light',
