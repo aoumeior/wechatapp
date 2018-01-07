@@ -32,7 +32,6 @@
       article: {}
     }
     onLoad(opition) {
-      console.log(opition)
       var self = this
       wepy.request({url: 'https://unitools.site/ytcc/app/view/data?viewid=xcx-list&id=' + opition.id,
         success: (data) => {

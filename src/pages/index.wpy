@@ -32,6 +32,7 @@
     </panel>
     <Articlelist></Articlelist>
   </view>
+    <info></info>
 </template>
 <script>
   import wepy from 'wepy'
@@ -40,6 +41,7 @@
   import Imageshow from '../components/imageshow'
   import imagetypesetting from '../components/imagetypesetting'
   import Articlelist from '../components/articlelist'
+  import Information from '../components/information'
   import Route from '../config/route'
 
   export default class Index extends wepy.page {
@@ -51,7 +53,8 @@
       imagetypesetting: imagetypesetting,
       imageshow: Imageshow,
       pane2: Panel,
-      panel: Panel
+      panel: Panel,
+      info: Information
     }
     data = {
       title: '如何解决网络营销之道',
@@ -78,6 +81,7 @@
       this.$invoke('Articlelist', 'g-request', rout.getUrl('Articlelist'))
       this.$invoke('imageshow', 'g-request', rout.getUrl('imageshow'))
       this.$invoke('imagetypesetting', 'g-request', rout.getUrl('imagetypesetting'))
+      this.$invoke('info', 'g-request', 'https://unitools.site/ytcc/app/view/data?viewid=xcx-company')
     }
   }
 </script>

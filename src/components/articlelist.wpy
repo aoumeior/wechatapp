@@ -80,7 +80,6 @@
             for (var item of data.data.data) {
               var time = moment(item.occur_time)
               item.day = time.format('D')
-              console.log(item.day)
               item.otherdata = time.weekYear() + '-' + time.format('M')
               item.profile = item.content.substr(0, 25) + '...'
             }
@@ -90,7 +89,6 @@
         })
       },
       'skiparticlepage': (id) => {
-        console.log(id)
         wepy.navigateTo({ url: 'articlepage?id=' + id })
       }
     };
