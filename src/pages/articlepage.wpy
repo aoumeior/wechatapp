@@ -19,7 +19,7 @@
 <script>
   import wepy from 'wepy'
   import Panel from '@/components/panel' // alias example
-
+  
   export default class Articlepage extends wepy.page {
     config = {
       navigationBarTitleText: '更多案例'
@@ -30,6 +30,7 @@
     data = {
       panel1: 10,
       article: {}
+
     }
     onLoad(opition) {
       var self = this

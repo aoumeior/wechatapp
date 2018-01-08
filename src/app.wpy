@@ -1,13 +1,4 @@
-<style lang="less">
-.container {
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
-  box-sizing: border-box;
-}
-</style>
+<style lang="less"></style>
 
 <script>
 import wepy from 'wepy'
@@ -19,8 +10,9 @@ export default class extends wepy.app {
       'pages/index',
       'pages/consult',
       'pages/case',
-      'pages/articlepage',
-      'pages/aboutus'
+      'pages/aboutus',
+      'pages/mk',
+      'pages/articlepage'
     ],
     window: {
       backgroundTextStyle: 'light',

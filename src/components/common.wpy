@@ -233,9 +233,9 @@ body {
 .h1{font-size:48rpx;font-weight:bold;line-height:48rpx;margin:20rpx 0;}
 .h2{font-size:36rpx;font-weight:bold;line-height:36rpx;margin:15rpx 0;}
 /*内容*/
-.content{font-size:28rpx;line-height:35rpx!important}
+.content{font-size:28rpx;line-height:36rpx!important}
 /*灰色文字*/
-.content-color{font-color:grey}
+.content-color{color:grey}
 </style>
 <template>
 

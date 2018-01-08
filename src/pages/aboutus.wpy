@@ -9,15 +9,57 @@
   .introduced{font-size:30rpx}
   .consult{font-size:30rpx}
   .consult button{position:relative;top:20rpx;margin-right:20rpx}
-
+  /*用于样式*/
+  .infotitle{
+    font-size: 36rpx;
+    display: block;
+  }
+  .coninfo{
+    margin: 30rpx 0;
+    font-size: 28rpx;
+    text-align: left;
+    text-indent:50rpx;
+  }
 </style>
 <template lang="wxml">
   <tabs>
+
     <view slot="tab0">
-      <image src="http://www.unitools.site/ytcc/static/pic/toopen4.jpg" mode="aspectFill" style="width: 100%;"></image>
-    </view>
+      <image src="http://www.yituocc.com/uploads/image/20170502/1493743997.jpg" mode="aspectFill" style="width: 100%;"></image>
+      <panel :num.sync="num">
+        <text class="infotitle" slot="title">江西艺拓彩绘有限公司</text>
+        <view>
+          <view class="coninfo">
+
+            <text>江西艺拓彩绘是一家专从事室内外装修工程及设计于一体的装饰公司。</text>
+            </view>
+
+            <view class="coninfo">
+              <text>我们力求打造为用户提供一体化装修服务，拥有超前的室内设计能力、一流的高质量施工工程、完善的装饰材料供应链，以‘极致’为企业信仰，追求极致的应用艺术，极致的空间利用、极致的工程落实。
+            </text>
+
+            <view class="coninfo">
+              <text>我们力求打造为用户提供一体化装修服务，拥有超前的室内设计能力、一流的高质量施工工程、完善的装饰材料供应链，以‘极致’为企业信仰.
+              </text>
+            </view>
+
+            <view class="coninfo">
+              <text>我们力求打造为用户提供一体化装修服务，拥有超前的室内设计能力、一流的高质量施工工程、完善的装饰材料供应链，以‘极致’为企业信仰，追求极致的应用艺术，极致的空间利用、极致的工程落实。
+              </text>
+            </view>
+
+            <view class="coninfo">
+              <text>我们力求打造为用户提供一体化装修服务，拥有超前的室内设计能力、一流的高质量施工工程、完善的装饰材料供应链，以‘极致’为企业信仰，追求极致的应用艺术，极致的空间利用、极致的工程落实。
+              </text>
+            </view>
+
+        </view>
+        </view>
+      </panel>
+    </view> 
+
     <view slot="tab1">
-      <image src="http://www.unitools.site/ytcc/static/pic/toopen4.jpg" mode="aspectFill" style="width: 100%;"></image>
+      <image src="http://www.yituocc.com/uploads/image/20170502/1493743997.jpg" mode="aspectFill" style="width: 100%;"></image>
       <view class="con underline">
         <view class="con-img">
           <image mode="aspectFit" src="http://www.unitools.site/ytcc/static/pic/icon1.png"></image>
@@ -35,30 +77,55 @@
       </view>
       <info></info>
     </view>
+
+    <view slot="tab2">
+      <image src="http://www.yituocc.com/uploads/image/20170502/1493743997.jpg" mode="aspectFill" style="width: 100%;"></image>
+      <view class="con underline">
+        <view class="con-img">
+          <image mode="aspectFit" src="http://www.unitools.site/ytcc/static/pic/icon1.png"></image>
+        </view>
+        <view class="con-literal">
+          <view class="profile-title">
+            <text class="com">江西华邦传媒</text>
+            <text class="introduced">百度推广，网站建设，企业营销服务</text>
+          </view>
+          <view class="consult">
+            <button size="mini">咨询</button>
+            <text>24小时免费咨询</text>
+          </view>
+        </view>
+      </view>
+      <info></info>
+    </view>
+
   </tabs>
 </template>
 <script>
-import wepy from 'wepy'
-import Common from '@/components/common' // alias example
-import Tabs from '../components/tabs'
-import Information from '../components/information'
+  import wepy from 'wepy'
+  import Common from '@/components/common' // alias example
+  import Tabs from '../components/tabs'
+  import Panel from '@/components/panel' // alias example
+  import Information from '../components/information'
 
-export default class Aboutus extends wepy.page {
-  config = {};
-  components = {
-    tabs: Tabs,
-    common: Common,
-    info: Information
-  };
+  export default class Aboutus extends wepy.page {
+    config = {};
+    components = {
+      tabs: Tabs,
+      common: Common,
+      info: Information,
+      panel: Panel
+    };
 
-  data = {};
+    data = {
+      num: 1
+    };
 
-  methods = {};
+    methods = {};
 
-  events = {};
+    events = {};
 
-  onLoad() {
-    this.$invoke('info', 'g-request', 'https://unitools.site/ytcc/app/view/data?viewid=xcx-company')
-  };
-}
+    onLoad() {
+      this.$invoke('info', 'g-request', 'https://unitools.site/ytcc/app/view/data?viewid=xcx-company')
+    };
+  }
 </script>

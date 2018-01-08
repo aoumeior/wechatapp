@@ -12,7 +12,7 @@
 }
 .tabw{
   width: 33.33%;
-  margin: 0 30rpx;
+  margin: 0 5rpx;
 }
 .active{
   border-bottom: 5rpx solid grey;
@@ -26,7 +26,7 @@
 </style>
 <template lang="wxml">
   <view class="tab">
-    <view class="tab-top m-b-10" bindtap="tabFun">
+    <view class="tab-top m-b-2" bindtap="tabFun">
       <view class="{{tabArr.curHdIndex=='0'? 'active' : ''}} inline tabw" id="tab-hd01" data-id="0">关于华邦</view>
       <view class="{{tabArr.curHdIndex=='1'? 'active' : ''}} inline tabw" id="tab-hd02" data-id="1">联系我们</view>
       <view class="{{tabArr.curHdIndex=='2'? 'active' : ''}} inline tabw" id="tab-hd03" data-id="2">分公司</view>

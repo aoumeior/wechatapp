@@ -1,4 +1,6 @@
 <style type="less">
+  .text-ellipsis{
+  }
 	.arraged{
 		width: 100%;
 		flex-direction: column;
@@ -10,11 +12,14 @@
 		padding: 10rpx;
 	}
 	.subtitlei{
-		whidth: 100%;
+		width: 350rpx;
     background: white;
     text-align: center;
     font-size: 25rpx;
     border-radius: 0 0 10rpx 10rpx;
+    overflow: hidden;
+    text-overflow:ellipsis;
+    white-space: nowrap;
 	}
 	.pic image {
 		width: 350rpx;
@@ -55,7 +60,8 @@
         })
       },
       'skiparticlepage': (item) => {
-        wepy.navigateTo({ url: 'articlepage?id=' + item })
+        wepy.navigateTo({ url: 'mk'})
+        //wepy.navigateTo({ url: 'articlepage?id=' + item })
       }
     }
   }
