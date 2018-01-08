@@ -1,3 +1,9 @@
+## 相关地址
+
+[git](https://github.com/aoumeior/wechatapp)
+[小程序开发](https://mp.weixin.qq.com/debug/wxadoc/dev/index.html)
+[wepy](https://tencent.github.io/wepy/document.html)
+
 ## web-app 功能
 
 |     页面     |                          地址                         | 备注 |
