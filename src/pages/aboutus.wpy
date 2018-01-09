@@ -62,7 +62,7 @@
       <image src="http://www.yituocc.com/uploads/image/20170502/1493743997.jpg" mode="aspectFill" style="width: 100%;"></image>
       <view class="con underline">
         <view class="con-img">
-          <image mode="aspectFit" src="http://www.unitools.site/ytcc/static/pic/icon1.png"></image>
+          <image mode="aspectFit" src="http://www.unitools.site/ytcc/static/pic/logo_ytcc.jpg"></image>
         </view>
         <view class="con-literal">
           <view class="profile-title">
