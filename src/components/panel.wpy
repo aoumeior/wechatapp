@@ -1,6 +1,5 @@
 <style lang="less">
   .panel {
-    /*width: 100%;*/
     margin-top: 20rpx;
     text-align: center;
     font-size: 12px;
@@ -22,21 +21,10 @@
 
     .subtitle {
       display: flex;
+      font-size: 11px;
+      padding-bottom: 20rpx;
       flex-direction: column;
       align-items: center;
-      padding-bottom: 20rpx;
-      font-size: 10px;
-    }
-
-    .info {
-      padding: 15rpx;
-    }
-    .testcounter {
-      margin-top: 15rpx;
-      position: absolute;
-    }
-    .counterview {
-      margin-left: 120rpx;
     }
   }
 </style>

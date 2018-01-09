@@ -2,7 +2,7 @@
   /* 用于布局 */
   .con{margin:20rpx 20rpx 0rpx; text-align: left; }
   .con-img{width: 300rpx; height: 300rpx; display: inline-block; }
-  .con-img image{margin: 30rpx; width: 270rpx; height: 270rpx; }
+  .con-img image{position: relative; top:-5rpx;width: 270rpx; height: 270rpx; }
   .con-literal{top: -50rpx; display: inline-block; position: relative; width: 370rpx; margin: 0 10rpx; }
   .com{display:block;font-weight:700;line-height:60rpx}
   .profile-title{display:inline-block}
@@ -70,7 +70,7 @@
             <text class="introduced">百度推广，网站建设，企业营销服务</text>
           </view>
           <view class="consult">
-            <button size="mini">咨询</button>
+            <button @tap="callPhone" size="mini">咨询</button>
             <text>24小时免费咨询</text>
           </view>
         </view>
@@ -120,7 +120,13 @@
       num: 1
     };
 
-    methods = {};
+    methods = {
+      'callPhone':() => {
+        wx.makePhoneCall({
+          phoneNumber: '18630977388'
+        })
+      }
+    };
 
     events = {};
 

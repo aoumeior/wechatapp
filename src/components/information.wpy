@@ -1,10 +1,9 @@
 <style type="less">
   .content{
-    overflow:hidden;
     zoom:1;
     margin:15rpx 0;
   }
-  .info,.key{font-size:22rpx;font-weight:bold;line-height:36rpx;margin:15rpx 0;}
+  .info,.key{font-size:30rpx;font-weight:bold;line-height:36rpx;margin:15rpx 0;}
 
 </style>
 <template>

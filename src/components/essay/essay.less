@@ -1,0 +1,35 @@
+@font-size: 20;
+
+/*font base*/
+.font(@index)when(@index <= 4)
+  {
+    @ret : @font-size + (4-@index)*5;
+    font-size: @ret rpx;
+    line-height: @ret rpx;
+  }
+.content
+  {
+    .font(4);
+  }
+
+//过滤
+.filter()
+{
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+//标题
+.title(){display:block;font-weight: bold;}
+//h1...h5
+.h1{.font(1);.title();.filter();position: relative;}
+.h2{.font(2);.title();.filter();}
+.h3,.h4,.h5{.content;.title();.filter();}
+.text{ .font(4)}
+.h1 > .text{display: inline-block;border-left: 8rpx solid grey;}
+.h2 > .text{display: inline-block;border-left: 8rpx solid grey;}
+//p-label
+.p{.content}
+.p :before{content: "    ";}
+//
+.strong{.content}

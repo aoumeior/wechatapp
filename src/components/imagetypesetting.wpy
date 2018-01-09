@@ -1,30 +1,31 @@
 <style type="less">
-  .text-ellipsis{
-  }
-	.arraged{
-		width: 100%;
-		flex-direction: column;
-		background: #ccc;
-    text-align: center;
-	}
-	.pic {
-		display: inline-block;
-		padding: 10rpx;
-	}
-	.subtitlei{
-		width: 350rpx;
-    background: white;
-    text-align: center;
-    font-size: 25rpx;
-    border-radius: 0 0 10rpx 10rpx;
-    overflow: hidden;
-    text-overflow:ellipsis;
-    white-space: nowrap;
-	}
+	.arraged
+    {
+  		width: 100%;
+  		flex-direction: column;
+  		background: #ccc;
+      text-align: center;
+  	}
+	.pic 
+    {
+  		display: inline-block;
+  		padding: 10rpx;
+  	}
+	.subtitlei
+    {
+  		width: 350rpx;
+      text-align: center;
+      font-size: 25rpx;
+      border-radius: 0 0 10rpx 10rpx;
+      background: white;
+      overflow: hidden;
+      text-overflow:ellipsis;
+      white-space: nowrap;
+  	}
 	.pic image {
+    display: block;
 		width: 350rpx;
 		height: 150rpx;
-		display: block;
     border-radius: 10rpx 10rpx 0 0;
 	}
 </style>
