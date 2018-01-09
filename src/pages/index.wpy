@@ -31,7 +31,7 @@
     </panel>
     <Articlelist></Articlelist>
   </view>
-   
+
 </template>
 <script>
   import wepy from 'wepy'
@@ -44,7 +44,7 @@
 
   export default class Index extends wepy.page {
     config = {
-      navigationBarTitleText: '华邦首页'
+      navigationBarTitleText: '艺拓首页'
     }
     components = {
       Articlelist: Articlelist,

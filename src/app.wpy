@@ -23,12 +23,12 @@ export default class extends wepy.app {
     tabBar: {
       'list': [{
         'pagePath': 'pages/index',
-        'text': '华邦首页',
+        'text': '艺拓首页',
         'iconPath': 'bar/index/default.png',
         'selectedIconPath': 'bar/index/click.png'
       }, {
         'pagePath': 'pages/consult',
-        'text': '华邦咨询',
+        'text': '艺拓咨询',
         'iconPath': 'bar/consult/default.png',
         'selectedIconPath': 'bar/consult/click.png'
       }, {

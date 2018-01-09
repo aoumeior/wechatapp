@@ -5,7 +5,7 @@
     </view>
     <view>
       <Panel :num.sync="panel1">
-        <text class="title" slot="title">华邦动态</text>
+        <text class="title" slot="title">艺拓动态</text>
         <text class="subtitle">持之以恒，不为私心所困，为实现互联网事业的梦想而奋斗</text>
       </Panel>
       <Articlelist></Articlelist>
@@ -20,7 +20,7 @@
 
   export default class Consult extends wepy.page {
     config = {
-      navigationBarTitleText: '华邦咨询'
+      navigationBarTitleText: '艺拓咨询'
     }
     components = {
       imageshow: Imageshow,

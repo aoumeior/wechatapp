@@ -56,7 +56,7 @@
         </view>
         </view>
       </panel>
-    </view> 
+    </view>
 
     <view slot="tab1">
       <image src="http://www.yituocc.com/uploads/image/20170502/1493743997.jpg" mode="aspectFill" style="width: 100%;"></image>
@@ -66,7 +66,7 @@
         </view>
         <view class="con-literal">
           <view class="profile-title">
-            <text class="com">江西华邦传媒</text>
+            <text class="com">江西艺拓传媒</text>
             <text class="introduced">百度推广，网站建设，企业营销服务</text>
           </view>
           <view class="consult">
@@ -86,7 +86,7 @@
         </view>
         <view class="con-literal">
           <view class="profile-title">
-            <text class="com">江西华邦传媒</text>
+            <text class="com">江西艺拓传媒</text>
             <text class="introduced">百度推广，网站建设，企业营销服务</text>
           </view>
           <view class="consult">

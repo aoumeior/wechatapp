@@ -27,26 +27,26 @@
 <template lang="wxml">
   <view class="tab">
     <view class="tab-top m-b-2" bindtap="tabFun">
-      <view class="{{tabArr.curHdIndex=='0'? 'active' : ''}} inline tabw" id="tab-hd01" data-id="0">关于华邦</view>
+      <view class="{{tabArr.curHdIndex=='0'? 'active' : ''}} inline tabw" id="tab-hd01" data-id="0">关于艺拓</view>
       <view class="{{tabArr.curHdIndex=='1'? 'active' : ''}} inline tabw" id="tab-hd02" data-id="1">联系我们</view>
       <view class="{{tabArr.curHdIndex=='2'? 'active' : ''}} inline tabw" id="tab-hd03" data-id="2">分公司</view>
-    </view>  
-    <view class="tab-right">  
+    </view>
+    <view class="tab-right">
       <view class="item {{tabArr.curBdIndex=='0'? 'item-active' : ''}}">
         <slot name="tab0">
           Title
         </slot>
-      </view>  
+      </view>
       <view class="item {{tabArr.curBdIndex=='1'? 'item-active' : ''}}">
         <slot name="tab1">
           Title
         </slot>
-      </view>  
+      </view>
       <view class="item {{tabArr.curBdIndex=='2'? 'item-active' : ''}}">
         <slot name="tab2">
           Title
         </slot>
-      </view>  
+      </view>
     </view>
   </view>
 </template>
