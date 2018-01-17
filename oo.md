@@ -23,6 +23,7 @@
 | 获取背景图片     |     https://www.unitools.site/ytcc/app/view/data?viewid=xcx-bg1     |                          |
 | 获取公司信息     |   https://www.unitools.site/ytcc/app/view/data?viewid=xcx-company   |                          |
 | 获取合作公司信息 | https://www.unitools.site/ytcc/app/view/data?viewid=xcx-cooperation | company_id(用于过滤公司) |
+| 图片上传         |               https://www.unitools.site/ytcc/uploadimg              |                     file |
 
 
 ## 数据库创建
