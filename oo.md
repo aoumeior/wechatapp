@@ -6,9 +6,10 @@
 
 ## web-app 功能
 
-|     页面     |                          地址                         | 备注 |
-| :----------- | :---------------------------------------------------: | ---: |
-| 图片地址展示 | https://www.unitools.site/ytcc/app/common/gallery.jsp |      |
+|     页面     |                           地址                          |    备注   |
+| :----------- | :-----------------------------------------------------: | --------: |
+| 图片地址展示 |  https://www.unitools.site/ytcc/app/common/gallery.jsp  |           |
+| 图片上传展示 | https://www.unitools.site/ytcc/app/common/imgupload.jsp | 最大为10m |
 
 
 ## 需求配置
