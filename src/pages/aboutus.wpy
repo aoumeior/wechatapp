@@ -66,8 +66,8 @@
         </view>
         <view class="con-literal">
           <view class="profile-title">
-            <text class="com">江西艺拓传媒</text>
-            <text class="introduced">百度推广，网站建设，企业营销服务</text>
+            <text class="com">南昌艺拓文化</text>
+            <text class="introduced">软件服务外包，网站建设，企业营销服务</text>
           </view>
           <view class="consult">
             <button @tap="callPhone" size="mini">咨询</button>
@@ -82,7 +82,7 @@
       <image src="http://www.yituocc.com/uploads/image/20170502/1493743997.jpg" mode="aspectFill" style="width: 100%;"></image>
       <view class="con underline">
         <view class="con-img">
-          <image mode="aspectFit" src="http://www.unitools.site/ytcc/static/pic/icon1.png"></image>
+          <image mode="aspectFit" src="http://www.unitools.site/ytcc/static/pic/logo_ytcc.jpg"></image>
         </view>
         <view class="con-literal">
           <view class="profile-title">
@@ -123,7 +123,7 @@
     methods = {
       'callPhone':() => {
         wx.makePhoneCall({
-          phoneNumber: '18630977388'
+          phoneNumber: '18279130274'
         })
       }
     };
