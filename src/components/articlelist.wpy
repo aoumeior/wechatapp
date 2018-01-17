@@ -33,7 +33,7 @@
     {
       display: inline-block;
     }
-  .title 
+  .title
     {
       width:550rpx;
       font-size: 30rpx;
@@ -92,9 +92,8 @@
           }
         })
       },
-      'skiparticlepage': (id) => {
+      'skiparticlepage':  (id) => {
         wepy.navigateTo({ url: 'mk'})
-        //wepy.navigateTo({ url: 'articlepage?id=' + id })
       }
     };
   }

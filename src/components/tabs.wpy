@@ -42,7 +42,7 @@
 </style>
 <template>
   <scroll-view scroll-x="true" class="tab-h" scroll-left="{{scrollLeft}}">
-    <view class="tab-item {{currentTab==0?'active':''}}" data-current="0" bindtap="swichNav">关于华邦</view>
+    <view class="tab-item {{currentTab==0?'active':''}}" data-current="0" bindtap="swichNav">关于艺拓</view>
     <view class="tab-item {{currentTab==1?'active':''}}" data-current="1" bindtap="swichNav">联系我们</view>
     <view class="tab-item {{currentTab==2?'active':''}}" data-current="2" bindtap="swichNav">分公司</view>
   </scroll-view>
