@@ -108,7 +108,9 @@
   import Information from '../components/information'
 
   export default class Aboutus extends wepy.page {
-    config = {};
+    config = {
+      navigationBarTitleText: '关于我们'
+    };
     components = {
       tabs: Tabs,
       common: Common,
@@ -132,6 +134,7 @@
 
     onLoad() {
       this.$invoke('info', 'g-request', 'https://unitools.site/ytcc/app/view/data?viewid=xcx-company')
+      this.$invoke('tabs', 'g-install')
     };
   }
 </script>

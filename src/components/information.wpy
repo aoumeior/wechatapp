@@ -1,29 +1,41 @@
 <style type="less">
-  .content{
-    zoom:1;
-    margin:15rpx 0;
-  }
-  .info,.key{font-size:30rpx;font-weight:bold;line-height:36rpx;margin:15rpx 0;}
+  .content
+    {
+      zoom:1;
+      margin:15rpx 0 15rpx;
+    }
+
+    .content > view 
+      {
+        clear: both;
+      }
+    .content :last-child
+      {
+        margin-bottom: 15rpx;
+      }
+  .key{font-size:30rpx;font-weight:bold;line-height:36rpx;margin:15rpx 0;float: right;}
+  .info{font-size:30rpx;font-weight:bold;line-height:36rpx;margin:15rpx 0;float: left;}
 
 </style>
 <template>
-  <view class="clearfix m-t-30">
+  <view class="m-t-30">
     <view class="h1 m-l-10">
       <text>{{cominfo.company_name}}</text>
     </view>
-      <view class="content m-10 underline clearfix">
-      <view class="clearfix ">
-        <text class="pull-left info">电话:</text><text class="pull-right key content-color">{{cominfo.tel}}</text>
+    <view class="content m-10">
+      <view>
+        <text class="info">电话:</text><text class="key content-color">{{cominfo.tel}}</text>
       </view>
-      <view class="clearfix underline">
-        <text class="pull-left info">电子邮件:</text><text class="pull-right key content-color">{{cominfo.email}}</text>
+      <view class="underline">
+        <text class="info">电子邮件:</text><text class="key content-color">{{cominfo.email}}</text>
       </view>
-      <view class="clearfix underline">
-        <text class="pull-left info">传真:</text><text class="pull-right key content-color">{{cominfo.fax}}</text>
+      <view class="underline">
+        <text class="info">传真:</text><text class="key content-color">{{cominfo.fax}}</text>
       </view>
-      <view class="clearfix underline">
-        <text class="pull-left info">地址:</text><text class="pull-right key content-color">{{cominfo.addr}}</text>
+      <view class="underline">
+        <text class="info">地址:</text><text class="key content-color">{{cominfo.addr}}</text>
       </view>
+      <view class="underline"></view>
     </view>
   </view>
 </template>

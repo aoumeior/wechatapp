@@ -1,33 +1,42 @@
 <style type="less">
-	.arraged
+  .arraged
     {
   		width: 100%;
   		flex-direction: column;
   		background: #ccc;
       text-align: center;
   	}
-	.pic 
+  .pic 
     {
   		display: inline-block;
   		padding: 10rpx;
+      position: relative;
   	}
-	.subtitlei
+  .subtitlei
     {
   		width: 350rpx;
       text-align: center;
       font-size: 25rpx;
+      position: absolute;
+      bottom: 0;
       border-radius: 0 0 10rpx 10rpx;
-      background: white;
+      background-color: grey;
+      opacity: 0.6;
       overflow: hidden;
       text-overflow:ellipsis;
       white-space: nowrap;
   	}
-	.pic image {
-    display: block;
-		width: 350rpx;
-		height: 150rpx;
-    border-radius: 10rpx 10rpx 0 0;
-	}
+  .subtitlei > text 
+    {
+      color: #fff;
+    }
+  .pic image 
+    {
+      display: block;
+  	  width: 350rpx;
+  	  height: 170rpx;
+      border-radius: 10rpx 10rpx 0 0;
+    }
 </style>
 <template>
 	<view class="arraged">
