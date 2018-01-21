@@ -41,7 +41,7 @@
 </template>
 <script>
 import wepy from 'wepy'
-import Common from '@/components/common' // alias example
+import Common from '@/components/common'
 
 export default class Information extends wepy.component {
   data= {
@@ -54,7 +54,6 @@ export default class Information extends wepy.component {
       wepy.request({
         'url': url,
         'success': function(data) {
-          console.log('1')
           self.cominfo = data.data.data[0]
           self.$apply()
           console.log(self.cominfo)

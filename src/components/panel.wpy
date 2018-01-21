@@ -3,10 +3,7 @@
     margin-top: 20rpx;
     text-align: center;
     font-size: 12px;
-    padding-top: 20rpx;
-    padding-left: 20rpx;
-    padding-right: 20rpx;
-    padding-bottom: 20rpx;
+    padding: 20rpx;
     &.grey {
       background: #ccc;
     }

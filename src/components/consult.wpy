@@ -1,0 +1,39 @@
+<template>
+<view style="width: 100%; padding: 20rpx 0; background-color: rgb(209,209,209);">
+  <view style="text-align: center; margin: 10rpx 0;">
+    <view><text style="font-weight: bold;">免费咨询</text></view>
+    <view><text>CONSULTATION</text></view>
+  </view>
+  <view>
+    <view>
+        <input type="text" bindfocus="clearInput()" placeholder="请输入您公司的名称"/>
+        <input type="text" bindfocus="clearInput()" placeholder="请输入联系人的姓名"/>
+        <input type="number" bindfocus="clearInput()" placeholder="请输入联系人的电话"/>
+        <input type="text" bindfocus="clearInput()" placeholder="请输入备注"/>
+        <button class="sub">立即提交</button>
+    </view>
+  </view>
+</view>
+</template>
+
+<script>
+import wepy from 'wepy'
+export default class Consult extends wepy.component {
+  methods={
+    clearInput: () => {}
+  }
+}
+</script>
+<style>
+  input
+    {
+      display: block;
+      width: 80%;
+      margin: 0 auto;
+    }
+  .sub
+    {
+      display: block;
+      width: 80%;
+    }
+</style>
