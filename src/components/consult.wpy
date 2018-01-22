@@ -5,12 +5,20 @@
     <view><text>CONSULTATION</text></view>
   </view>
   <view>
-    <view>
-        <input type="text" bindfocus="clearInput()" placeholder="请输入您公司的名称"/>
-        <input type="text" bindfocus="clearInput()" placeholder="请输入联系人的姓名"/>
-        <input type="number" bindfocus="clearInput()" placeholder="请输入联系人的电话"/>
-        <input type="text" bindfocus="clearInput()" placeholder="请输入备注"/>
-        <button class="sub">立即提交</button>
+    <view style="margin-top: 10rpx;">
+        <view class="necess">
+          <input type="text" placeholder-style="holder"   bindfocus="clearInput()" placeholder="*请输入您公司的名称"/>
+        </view>
+        <view class="necess">
+          <input type="text" placeholder-style="holder"   bindfocus="clearInput()" placeholder="*请输入联系人的姓名"/>
+        </view>
+        <view class="necess">
+          <input type="number" placeholder-style="holder" bindfocus="clearInput()" placeholder=" *请输入联系人的电话"/>
+        </view>
+        <view class="necess">
+          <input type="text"   placeholder-style="holder"   bindfocus="clearInput()" placeholder="*请输入备注"/>
+        </view>
+        <button type="primary" placeholder-style="holder" class="sub">立即提交</button>
     </view>
   </view>
 </view>
@@ -25,15 +33,27 @@ export default class Consult extends wepy.component {
 }
 </script>
 <style>
+  .holder
+    {
+      padding-left: 20rpx;
+    }
   input
     {
-      display: block;
-      width: 80%;
-      margin: 0 auto;
+      display: inline-block;
+      border : 5rpx  solid grey;
+    }
+  .necess
+    {
+      color: red;
+      width: 400rpx;
+      margin: 5rpx auto;
     }
   .sub
     {
       display: block;
-      width: 80%;
+      width: 50%;
+      height: 60rpx;
+      font-size: 30rpx;
+      line-height: 60rpx;
     }
 </style>
